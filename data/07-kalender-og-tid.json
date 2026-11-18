@@ -1,0 +1,55 @@
+{
+  "nr": 7,
+  "tab": "Planlægning",
+  "title": "Kalender, To Do eller Planner?",
+  "teaser": "Blokér tid til dine prioriteter, og læg gentaget arbejde det rigtige sted.",
+  "sources": ["2026-04-08", "2026-07-01", "2026-08-19", "2026-11-11"],
+  "lead": "Blokerer du ikke tid til dine prioriteter, fylder andre den med deres. Og ikke alt gentaget arbejde hører hjemme i kalenderen: <b>kalenderen gentager efter uret, To Do gentager efter dig</b>.",
+  "rule": {
+    "title": "Skal det efterlade et spor, når det ikke bliver gjort, er det en opgave. Skal det bare gå forbi, er det en aftale.",
+    "sub": "En kalenderpåmindelse kan du lukke, uden at noget registrerer, at du sprang over. En opgave i To Do bliver stående og bliver rød.",
+    "bullets": [
+      "En gentaget <b>kalenderaftale</b> dukker op tirsdag kl. 10, fordi det er tirsdag kl. 10. Om du mødte op, er kalenderen ligeglad med.",
+      "En gentaget <b>To Do-opgave</b> får først sin næste forekomst, når du krydser den nuværende af.",
+      "Start med <b>én fast fokusblok på to timer</b> om ugen, markeret som <i>Busy</i>, og behandl den som et kundemøde.",
+      "I New Outlook viser <b>Teammates</b> dine nærmeste kollegers kalendere med ét klik. Ved fire eller flere personer eller lokaler er Scheduling Assistant bedre."
+    ],
+    "ask": {
+      "label": "Hvor skal det gentagne arbejde bo?",
+      "big": "4", "unit": "kasser",
+      "q": "Gå din uge igennem, og læg hver gentagelse i én kasse.",
+      "routes": [
+        {"if": "Kræver tid, ofte med andre", "then": "Kalender"},
+        {"if": "Skal krydses af og efterlade bevis", "then": "To Do", "yes": true},
+        {"if": "Forberedelse til et møde, der findes", "then": "Begge"},
+        {"if": "Glemmer du aldrig", "then": "Ingen af dem"}
+      ]
+    }
+  },
+  "table": {
+    "title": "Samme job, to helt forskellige opførsler",
+    "sub": "Hvor gentagelsen er forankret, afgør, hvad der sker, når du springer over.",
+    "cols": ["", "Gentaget kalenderaftale", "Gentaget To Do-opgave"],
+    "rows": [
+      ["Forankret i", "Klokken", "Din afkrydsning"],
+      ["Hvis du springer over", "Intet. Den glider forbi", "Den bliver stående og bliver rød"],
+      ["Bedst til", "1:1, reviews, planlægningsmøder, fokusblokke", "Fakturaer, backup, rapporter, rykkere"],
+      ["Opsætning", "Gentagelse på aftalen. Sæt den til <i>Busy</i>, ikke <i>Tentative</i> eller <i>Free</i>", "Sæt forfaldsdato først, derefter <i>Repeat</i>. <i>Custom</i> giver “hver N” og flere ugedage i én opgave"]
+    ]
+  },
+  "lists": [
+    {"title": "Kalenderblokering i praksis", "sub": "Start småt, og byg lag på", "mark": "n", "items": [
+      "<b>Én fokusblok,</b> samme tid hver uge, fx mandag 9–11. Markér den <i>Busy</i>, og flyt den ikke for et “hurtigt møde”.",
+      "<b>Tjek ikke mail i blokken.</b> Den er til tænkning, planlægning og den store opgave, ikke til administration.",
+      "<b>Byg på efter en måned:</b> 15 minutters buffer mellem møder, 30 minutter til mail og administration om eftermiddagen og planlægning fredag eftermiddag.",
+      "<b>Farvekod blokkene,</b> fx rød = fokus, gul = administration, grøn = buffer, så du ser balancen med ét blik.",
+      "<b>Planner-tavler:</b> 4–6 buckets med én logik. Brug buckets til arbejdsgange, overleveringer, kategorier eller tidshorisont. Brug dem ikke til personer eller prioritet, som Planner allerede har felter til."
+    ]},
+    {"title": "Det løser det ikke", "sub": "Begrænsninger, du skal kende", "mark": "x", "items": [
+      "<b>To Do kan ikke “gentage tre dage efter, at jeg blev færdig”.</b> Mønsteret tæller altid fra planen, aldrig fra afkrydsningen.",
+      "<b>Teammates findes kun i New Outlook og på web</b> og viser kun det, kollegaen selv deler. Private aftaler forbliver private.",
+      "<b>Mange kalendere oven på hinanden bliver rodet.</b> Ved fire eller flere personer eller lokaler bør du bruge Scheduling Assistant.",
+      "<b>Det sværeste er at holde blokken,</b> når nogen beder om netop den tid. Det løser intet værktøj."
+    ]}
+  ]
+}

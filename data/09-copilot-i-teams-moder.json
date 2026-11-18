@@ -1,0 +1,53 @@
+{
+  "nr": 9,
+  "tab": "Copilot",
+  "title": "Copilot i Teams-møder",
+  "teaser": "Copilot læser transskriptet, ikke lyden. Fejl i teksten bliver til fejl i referatet.",
+  "sources": ["2026-06-10"],
+  "lead": "Copilot lytter ikke til mødets lyd. Den arbejder ud fra det <b>transskript</b>, Teams laver undervejs. Hvert forkert ord og hver forkert taler i transskriptet ender i referatet, og det ser lige så poleret ud, selv om det er forkert.",
+  "rule": {
+    "title": "Dit referat er aldrig bedre end dit transskript.",
+    "sub": "Behandl transskriptet som det input, du er ansvarlig for. Så gør Copilot det, den er lavet til.",
+    "bullets": [
+      "<b>Flere personer på én mødelokaleenhed</b> bliver til “Speaker 1” og “Speaker 2”. Handlinger får forkert ejer eller slet ingen.",
+      "<b>Når folk taler i munden på hinanden,</b> opstår der halve sætninger, som Copilot kan læse som beslutninger.",
+      "<b>Accenter og flere sprog</b> giver forkerte ord, der kan ændre meningen med en hel diskussion.",
+      "<b>Fem til femten minutters oprydning</b> efter et timelangt møde er stadig mindre end at skrive referatet selv."
+    ],
+    "ask": {
+      "label": "Efter mødet",
+      "big": "10", "unit": "minutter",
+      "q": "Ret transskriptet, før du stoler på referatet.",
+      "routes": [
+        {"if": "Forkert taler eller forkerte ord", "then": "Ret i transskriptet"},
+        {"if": "Transskriptet er rettet", "then": "Generér referatet igen", "yes": true},
+        {"if": "Ingen tid", "then": "Giv opgaven videre"}
+      ]
+    }
+  },
+  "table": {
+    "title": "Det, der ødelægger referatet, og hvordan du undgår det",
+    "sub": "Det meste løses før og under mødet.",
+    "cols": ["Problem", "Hvad der sker i referatet", "Løsning"],
+    "rows": [
+      ["Flere i samme lokale på én enhed", "Handlinger får forkert ejer eller ingen ejer", "Alle logger ind fra deres egen enhed, også når de sidder i samme lokale"],
+      ["Folk taler i munden på hinanden", "Halve sætninger bliver læst som enighed", "Én ad gangen, når der skal besluttes noget"],
+      ["Accenter eller flere sprog", "Forkerte ord ændrer meningen", "Slå <i>Language identification</i> til under <i>Meeting options</i> før mødet"],
+      ["Mange deltagere med ukendte stemmer", "Forkert tilskrivning", "Bed folk sige deres navn, når de kommer med vigtige punkter"]
+    ]
+  },
+  "lists": [
+    {"title": "Før, under og efter", "sub": "Den faste rutine", "mark": "n", "items": [
+      "<b>Før:</b> Slå <i>Language identification</i> til i <i>Meeting options</i>, og bed alle om at logge ind fra deres egen enhed.",
+      "<b>Under:</b> Sig dit navn, når du kommer med et vigtigt punkt, især i store møder.",
+      "<b>Efter:</b> Åbn fanen <i>Recap</i> → det fulde transskript.",
+      "<b>Ret</b> forkerte talere og forkerte ord direkte i transskriptet.",
+      "<b>Gå tilbage til Recap,</b> og lad Copilot generere referatet igen ud fra den rettede tekst."
+    ]},
+    {"title": "Det løser det ikke", "sub": "Vær ærlig om grænserne", "mark": "x", "items": [
+      "<b>Et poleret referat er ikke et korrekt referat.</b> Tjek altid handlinger og ejere, før de sendes videre.",
+      "<b>Oprydningen tager tid</b>, typisk 5–15 minutter pr. mødetime. Den kan uddelegeres, men den kan ikke springes over.",
+      "<b>Det, der aldrig blev sagt tydeligt,</b> kan Copilot ikke gøre tydeligt. Uklare beslutninger forbliver uklare."
+    ]}
+  ]
+}

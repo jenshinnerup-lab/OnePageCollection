@@ -1,0 +1,57 @@
+{
+  "nr": 6,
+  "tab": "Outlook",
+  "title": "Ny eller klassisk Outlook?",
+  "teaser": "Tre ting afgør skiftet, og en 5-minutters-test, før du beslutter dig. Plus sikker uddelegering.",
+  "sources": ["2026-04-15", "2026-09-09"],
+  "lead": "Mange bliver flyttet til New Outlook uden at blive spurgt. Spørgsmålet er ikke, om New Outlook er god, men om <b>det, du har bygget i Classic, er kommet med</b>. Har du kun prøvet New Outlook for længe siden, er dit billede forældet. Hullerne er blevet mindre det seneste år.",
+  "rule": {
+    "title": "Skift, når det sidste på din daglige liste virker. Ikke når det første gør.",
+    "sub": "Lea Davids anbefaling er stadig at blive på Classic for nu. Ikke fordi New er dårlig, men fordi det, der gør Outlook hurtig for mange, ikke er helt på plads endnu.",
+    "bullets": [
+      "<b>Quick Steps</b> findes i New Outlook, men kun delvist. Tjek dine egne, før du skifter.",
+      "<b>COM-tilføjelser</b>, fx CRM-, diktat- og dokumenthåndteringsplugins, virker ikke i New Outlook. Kun web-tilføjelser gør.",
+      "<b>Offentlige mapper</b> har begrænset understøttelse. Bruger teamet dem, er Classic ikke valgfrit.",
+      "Skifteknappen sidder øverst til højre. For almindelige Microsoft 365-/Exchange-postkasser mister du intet ved at skifte frem og tilbage, fordi posten ligger på serveren."
+    ],
+    "ask": {
+      "label": "Før du beslutter noget",
+      "big": "5", "unit": "minutter",
+      "q": "Tjek din egen hverdag op mod de tre huller.",
+      "routes": [
+        {"if": "Du bruger Quick Steps dagligt", "then": "Test dem først"},
+        {"if": "CRM- eller DMS-tilføjelse i båndet", "then": "Bliv på Classic"},
+        {"if": "Delte arkiver i offentlige mapper", "then": "Bliv på Classic"},
+        {"if": "Ingen af delene", "then": "Prøv New", "yes": true}
+      ]
+    }
+  },
+  "table": {
+    "title": "Hvad følger med?",
+    "sub": "Status ifølge Lea Davids gennemgang i september 2026. Microsoft lukker løbende huller.",
+    "cols": ["Funktion", "Classic Outlook", "New Outlook"],
+    "rows": [
+      ["Quick Steps", "Fuld <span class=\"tag ok\">ja</span>", "Delvist. Skal bygges forfra, kun Exchange Online, ikke delte postkasser <span class=\"tag warn\">delvist</span>"],
+      ["Tilføjelser", "COM- og web-tilføjelser", "Kun web-tilføjelser <span class=\"tag no\">ingen COM</span>"],
+      ["Offentlige mapper", "Ja", "Begrænset <span class=\"tag warn\">delvist</span>"],
+      ["Fastgør (Pin)", "Nej, brug flag", "Ja <span class=\"tag ok\">ja</span>"],
+      ["Teammates i kalenderen", "Nej", "Ja. Kollegers kalendere med ét klik <span class=\"tag ok\">ja</span>"],
+      ["POP-konto eller lokal PST", "Ja", "Rør ikke knappen. Spørg IT først"]
+    ]
+  },
+  "lists": [
+    {"title": "5-minutters-testen", "sub": "Gør det, før du beslutter dig", "mark": "n", "items": [
+      "<b>Find knappen</b> øverst til højre. Står der “Try the new Outlook”, og er den slået fra, kører du Classic.",
+      "<b>Skriv de tre ting ned, du gør hver dag.</b> Ikke de imponerende, men de kedelige, der gentages.",
+      "<b>Slå knappen til, prøv netop de tre, og slå den fra igen.</b>",
+      "<b>Skift, når den sidste af de tre virker.</b>"
+    ]},
+    {"title": "Uddelegér uden at give alt væk", "sub": "Adgang til din postkasse er ikke alt eller intet", "mark": "n", "items": [
+      "<b>Tre niveauer pr. mappe:</b> <i>Reviewer</i> må kun læse. <i>Author</i> må læse, oprette og redigere sine egne elementer. <i>Editor</i> må alt i mappen.",
+      "<b>Godt udgangspunkt:</b> Kalender = Editor, Indbakke = Reviewer. Opgaver, noter og kontakter kun ved behov.",
+      "<b>Send on behalf</b> viser, at assistenten sender for dig. <b>Send As</b> ser ud, som om det kommer fra dig, og tildeles af en administrator.",
+      "<b>Private aftaler</b> er skjult for stedfortrædere som standard, medmindre du har slået “se private elementer” til.",
+      "<b>Classic:</b> <i>File → Account Settings → Delegate Access</i>. Start med læseadgang, og udvid bevidst."
+    ]}
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "nr": 8,
+  "tab": "Loop & OneNote",
+  "print_zoom": 0.47,
+  "title": "Loop eller OneNote?",
+  "teaser": "Arkiv eller levende samarbejde, og hvem ejer egentlig den Loop-komponent?",
+  "sources": [
+    "2026-07-08",
+    "2026-07-29",
+    "2026-09-30",
+    "2026-10-28"
+  ],
+  "lead": "To værktøjer til noter, som løser to forskellige opgaver. Og <b>der, hvor du opretter noget, bestemmer, hvem der ejer det</b>. En Loop-komponent i en chat ligger ikke i chatten, men i én persons OneDrive.",
+  "rule": {
+    "title": "Opret det dér, hvor det skal ende.<br>Loop flytter det ikke for dig.",
+    "sub": "OneNote er arkivet til det, du gemmer. Loop er overfladen til det, I bygger sammen lige nu.",
+    "bullets": [
+      "<b>OneNote</b> er et struktureret arkiv til mødenoter, referencer og alt, der skal kunne findes om måneder.",
+      "<b>Loop</b> er et lag til levende samarbejde. Skal flere end to handle på den samme information, så send en <b>Loop-komponent</b> i stedet for en statisk besked.",
+      "En komponent oprettet i en <b>chat eller mail</b> gemmes som en .loop-fil i <b>din OneDrive</b> (<i>Microsoft Teams Chat Files</i>).",
+      "En komponent oprettet i <b>Loop-appen</b> ligger i et <b>workspace</b> i organisationens lager og tilhører dem, der er inviteret ind."
+    ],
+    "ask": {
+      "label": "Spørg dig selv",
+      "big": "?",
+      "unit": "",
+      "q": "Gemmer du noget til senere, eller bygger du noget sammen med andre lige nu?",
+      "routes": [
+        {
+          "if": "Til senere, som reference",
+          "then": "OneNote"
+        },
+        {
+          "if": "Sammen, lige nu, og det skal leve længe",
+          "then": "Loop-workspace",
+          "yes": true
+        },
+        {
+          "if": "Sammen, men det er dødt på fredag",
+          "then": "Komponent i chatten"
+        },
+        {
+          "if": "Er du i tvivl",
+          "then": "Workspace"
+        }
+      ]
+    }
+  },
+  "table": {
+    "title": "Hvor bor din Loop-komponent?",
+    "sub": "Det ser ens ud i chatten. Forskellen viser sig den dag, nogen stopper.",
+    "cols": [
+      "",
+      "Oprettet i chat eller mail",
+      "Oprettet i Loop-appen (workspace)"
+    ],
+    "rows": [
+      [
+        "Hvor ligger filen",
+        "I opretterens OneDrive, <span class=\"mono\">Microsoft Teams Chat Files</span> <span class=\"tag warn\">personlig</span>",
+        "På en side i et workspace i organisationens lager <span class=\"tag ok\">fælles</span>"
+      ],
+      [
+        "Når opretteren stopper",
+        "Komponenten kan blive til en grå boks med “du skal have adgang”",
+        "Bliver i workspacet hos dem, der er inviteret"
+      ],
+      [
+        "Nye i chatten",
+        "Får ikke automatisk adgang. Chatmedlemskab og filadgang er to forskellige ting",
+        "Styres af, hvem der er med i workspacet"
+      ],
+      [
+        "Søgning",
+        "Giv komponenten et sigende navn. .loop-filen dukker op i Microsoft 365-søgning",
+        "Find sider i Loop-appen. De dukker upålideligt op i Teams- og Outlook-søgningen"
+      ],
+      [
+        "Bedst til",
+        "Tre punkter før et møde, en hurtig afstemning, en kladdeliste",
+        "Lanceringsplaner, faste dagsordener, projekttrackere og alt, som revision eller kunde kan spørge efter"
+      ]
+    ]
+  },
+  "lists": [
+    {
+      "title": "Tjekliste",
+      "sub": "Én kilde til sandheden, ingen forældreløse filer",
+      "mark": "n",
+      "items": [
+        "<b>Navngiv komponenter, så de kan findes,</b> fx “Q3 lanceringstjekliste, juli 2026” og ikke “Tabel”.",
+        "<b>Opret det, der tilhører teamet, i en gruppechat eller kanal,</b> ikke i en 1:1-samtale.",
+        "<b>Det, der skal leve længe, startes i Loop-appen</b> og indsættes derefter i chatten. Det tager ét klik den vej, men den anden vej findes ikke.",
+        "<b>Hold komponenter små:</b> tjeklister, statustabeller, tilmeldingslister. En projektplan på 30 rækker med afhængigheder passer ikke ind.",
+        "<b>Flyt det færdige over i OneNote,</b> når arbejdet er afsluttet, så Loop ikke bliver et arkiv."
+      ]
+    },
+    {
+      "title": "Det løser det ikke",
+      "sub": "Begrænsninger, du skal kende",
+      "mark": "x",
+      "items": [
+        "<b>Der er ingen flytteknap.</b> En komponent fra en chat kan ikke flyttes til et workspace. Du må kopiere indholdet, og det gamle link peger stadig på den gamle fil.",
+        "<b>Loop-sider er svære at finde</b> fra Teams- og Outlook-søgningen. Søg i Loop-appen.",
+        "<b>Deler du en komponent i en chat,</b> får folk, der tilføjes til chatten senere, ikke adgang automatisk.",
+        "<b>Tjek din OneDrive:</b> <i>My files → Microsoft Teams Chat Files</i> viser alle de komponenter, du har startet, også dem, du troede tilhørte gruppen."
+      ]
+    }
+  ],
+  "bonus": {
+    "kicker": "Bonus · OneNote",
+    "title": "Den forsvundne OneNote-side",
+    "paras": [
+      "Spørg først: Findes siden stadig, men indholdet er ændret? Eller er hele siden væk? Svaret afgør, hvilket værktøj du skal bruge. Begge findes under fanen <b>History</b> i OneNote til Windows."
+    ],
+    "note": "Virker kun for notesbøger i OneDrive eller SharePoint og ikke i Mac-appen. Ejeren kan slå historikken fra. Slås den til igen, gendannes intet bagud. Papirkurven tømmes efter 60 dage.",
+    "steps": [
+      "<b>Indholdet er ændret:</b> <i>History → Page Versions</i>. Højreklik på den rigtige version → <i>Restore Version</i>, eller brug <i>Copy Page To</i> for at beholde begge.",
+      "<b>Hvem har ændret hvad?</b> <i>Recent Edits</i> filtrerer på tid, og <i>Find by Author</i> grupperer efter person.",
+      "<b>Siden er væk:</b> <i>History → Notebook Recycle Bin</i>, og træk siden tilbage, hvor den hører til.",
+      "<b>Gør det denne uge:</b> Tjek, at historikken ikke er slået fra i jeres delte notesbøger."
+    ]
+  }
+}

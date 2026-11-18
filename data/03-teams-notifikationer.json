@@ -1,0 +1,57 @@
+{
+  "nr": 3,
+  "tab": "Teams",
+  "title": "Teams-notifikationer under kontrol",
+  "teaser": "Fire niveauer, fem minutters opsætning, og telefonen holder op med at summe.",
+  "sources": ["2026-03-11", "2026-06-17"],
+  "lead": "Når en reaktion på en joke larmer lige så meget som en besked fra din leder, holder du op med at stole på alle notifikationer. Løsningen er hverken at slå alt til eller alt fra, men at <b>fortælle Teams, hvad der betyder noget for dig</b>.",
+  "rule": {
+    "title": "Bestem selv, hvad der må afbryde dig.<br>Resten venter, til du kigger.",
+    "sub": "Sæt en stille standard, og løft kun de få kanaler og personer frem, der virkelig betyder noget.",
+    "bullets": [
+      "Gå ikke kanal for kanal. Sæt først en <b>stille standard</b> under <i>Settings → Notifications → Teams and channels</i>, så nye kanaler ikke larmer fra dag ét.",
+      "Løft derefter kun de <b>2–4 kanaler</b>, du skal følge tæt.",
+      "<b>Priority access</b> lader udvalgte personer bryde igennem <i>Do not disturb</i>, så du kan få ro uden at misse det vigtige.",
+      "Sæt <b>stilletimer</b> uden for arbejdstid, og indstil mobilen for sig."
+    ],
+    "ask": {
+      "label": "Del alle notifikationer i niveauer",
+      "big": "4", "unit": "niveauer",
+      "q": "Hvor meget må det forstyrre dig?",
+      "routes": [
+        {"if": "1 · Direkte besked eller @dit navn", "then": "Banner straks", "yes": true},
+        {"if": "2 · Dine 3–4 vigtigste kanaler", "then": "Banner and feed"},
+        {"if": "3 · Kanaler, du følger løst", "then": "Only show in feed"},
+        {"if": "4 · Meddelelser, sociale og FYI", "then": "Off"}
+      ]
+    }
+  },
+  "table": {
+    "title": "Sådan sætter du det op",
+    "sub": "Menunavnene er gengivet på engelsk. Placeringen kan variere lidt efter version og organisation.",
+    "cols": ["Hvad", "Hvor", "Indstilling"],
+    "rows": [
+      ["Niveau 1: Direkte beskeder og @dit navn", "<i>Settings → Notifications and activity</i>", "Er som standard banner. Tjek blot, at det stadig er sådan"],
+      ["Niveau 2–4: Pr. kanal", "Hold musen over kanalen → <i>⋯ → Channel notifications</i>", "Sæt både <i>All new posts</i> og <i>Channel mentions</i> til <i>Banner and feed</i>, <i>Only show in feed</i> eller <i>Off</i>"],
+      ["Aktivitetsstøj", "<i>Settings → Notifications → Activity</i>", "Slå reaktioner og likes fra. Behold mentions og svar"],
+      ["Priority access", "<i>Settings → Privacy → Manage priority access</i>", "Tilføj leder, nærmeste kolleger og evt. én kritisk kanal"],
+      ["Stilletimer", "<i>Settings → Notifications</i> (quiet hours)", "Fx 18–08 på hverdage og hele weekenden"],
+      ["Mobil", "Notifikationsindstillinger i Teams-appen", "Kun direkte beskeder og @mentions. Ingen reaktioner eller kanalaktivitet"]
+    ]
+  },
+  "lists": [
+    {"title": "Tjekliste", "sub": "Gør det én gang, og nyd roen", "mark": "n", "items": [
+      "<b>Sæt standarden for nye kanaler til stille,</b> før du justerer enkelte kanaler.",
+      "<b>Løft kun 2–4 kanaler</b> til <i>Banner and feed</i>. Resten får <i>Only show in feed</i> eller <i>Off</i>.",
+      "<b>Når du bliver tilføjet til et nyt team,</b> så åbn det én gang og sæt notifikationerne, før den første besked kommer. Det tager et minut.",
+      "<b>Føj de få personer, der altid skal kunne nå dig,</b> til Priority access.",
+      "<b>Sæt stilletimer,</b> og giv mobilen sine egne, strammere regler."
+    ]},
+    {"title": "Det løser det ikke", "sub": "Ro kræver, at du selv kigger", "mark": "x", "items": [
+      "<b>Stille kanaler betyder, at du selv skal kigge.</b> Sæt faste tidspunkter af til at gennemgå dem.",
+      "<b>@channel og @team</b> kommer stadig igennem, hvis <i>Channel mentions</i> står til banner. Slå det fra i kanaler, hvor det bruges til ikke-akutte meddelelser.",
+      "<b>Menuerne flytter sig.</b> Stilletimer og Priority access ligger lidt forskellige steder afhængigt af version. Tjek, hvad du faktisk har.",
+      "<b>Har du vagt,</b> så slå stilletimerne midlertidigt fra."
+    ]}
+  ]
+}

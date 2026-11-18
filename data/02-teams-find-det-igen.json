@@ -1,0 +1,56 @@
+{
+  "nr": 2,
+  "tab": "Teams",
+  "title": "Find det igen i Teams",
+  "teaser": "To søgefelter, der svarer på to forskellige spørgsmål. Lær dem begge.",
+  "sources": ["2026-10-14"],
+  "lead": "Teams har <b>to forskellige søgninger</b>. De fleste lærer kun den ene og bruger den til begge opgaver. Så virker søgningen tilfældig, og man ender med at rulle i fire måneders chathistorik.",
+  "rule": {
+    "title": "Kender du samtalen, så søg i den.<br>Kender du kun personen, så søg i alt.",
+    "sub": "Den smalle søgning er hurtig, når du ved, hvor beskeden er. Den brede søgning er stærk, når du filtrerer på afsenderen.",
+    "bullets": [
+      "<span class=\"mono\">Ctrl+E</span> sætter markøren i søgefeltet øverst. Det søger i alle chats, kanaler, personer og filer, du har adgang til.",
+      "<span class=\"mono\">Ctrl+F</span> søger kun i den chat eller kanal, du har åben lige nu.",
+      "Den brede søgning deler resultaterne i faner som <i>Messages</i> og <i>Files</i>. Under <i>Messages</i> kan du filtrere på afsender, team eller kanal og dato.",
+      "Søg på de ord, <b>afsenderen</b> brugte, ikke på dit eget resumé. Der stod måske “tidsplan”, selv om du husker det som “datoer”."
+    ],
+    "ask": {
+      "label": "Hvad kan du huske om beskeden?",
+      "big": "2", "unit": "genveje",
+      "q": "Vælg søgning efter det, du ved, ikke efter vane.",
+      "routes": [
+        {"if": "Hvilken chat eller kanal den er i", "then": "Ctrl+F", "yes": true},
+        {"if": "Kun hvem der sendte den", "then": "Ctrl+E + afsender"},
+        {"if": "Afsenderfiltret giver stadig for meget", "then": "+ dato"}
+      ]
+    }
+  },
+  "duo": [
+    {"icon": "search", "title": "Ctrl+E = hele huset", "text": "Søger på tværs af alt, hvad din konto har adgang til. Brug den, når du ikke ved, hvor beskeden er, og filtrér straks på den person, der sendte den."},
+    {"icon": "target", "title": "Ctrl+F = ét rum", "text": "Søger kun i den åbne samtale. Det lyder som en begrænsning, men det er pointen: Ingen hits fra tolv andre kanaler forstyrrer."}
+  ],
+  "table": {
+    "title": "De to søgninger side om side",
+    "sub": "Spørger du det smalle værktøj om noget bredt eller omvendt, ser resultaterne tilfældige ud.",
+    "cols": ["", "Ctrl+E · bred søgning", "Ctrl+F · i samtalen"],
+    "rows": [
+      ["Søger i", "Alle chats, kanaler, personer og filer, du har adgang til", "Kun den chat eller kanal, der er åben"],
+      ["Bedst når", "Du ikke ved, hvor det er, men husker hvem der skrev", "Du kender samtalen, men ikke linjen, fx en kanal med 200 beskeder"],
+      ["Filtre", "Afsender, team/kanal og dato under fanen <i>Messages</i>", "Ingen. Du er allerede i den rigtige samtale"],
+      ["Typisk fejl", "Ingen filtre, så du drukner i hits", "Søger i den forkerte chat og tror, beskeden er væk"]
+    ]
+  },
+  "lists": [
+    {"title": "Fire regler, der dækker næsten alt", "sub": "Sæt dem op ved skærmen", "mark": "n", "items": [
+      "<b>Ved du, hvilken chat den er i?</b> Tryk <span class=\"mono\">Ctrl+F</span>.",
+      "<b>Ved du det ikke?</b> Tryk <span class=\"mono\">Ctrl+E</span>, og filtrér på afsenderen. Husker du, hvem der sendte den, behøver du sjældent at huske mere.",
+      "<b>Skriv afsenderens ord,</b> hvis du kan huske dem, ikke din egen beskrivelse af beskeden.",
+      "<b>Tilføj først et datofilter,</b> når afsenderfiltret stadig giver for mange hits."
+    ]},
+    {"title": "Det løser det ikke", "sub": "Når søgningen ikke finder noget, er det ikke altid en fejl", "mark": "x", "items": [
+      "<b>Søgningen finder kun det, din konto må se.</b> Blev du tilføjet til en gruppechat uden historik, findes de ældre beskeder ikke for dig.",
+      "<b>Indhold i Loop-komponenter</b> dukker upålideligt op i søgningen. Holder teamet lister i komponenter, så søg i Loop-appen i stedet.",
+      "<b>Søgningen forstår ikke synonymer.</b> Finder du intet, så prøv de ord, kollegaen typisk bruger."
+    ]}
+  ]
+}

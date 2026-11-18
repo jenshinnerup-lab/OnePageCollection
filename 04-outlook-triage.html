@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fra indbakke til triage · M365+ onepager 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a4231;--forest-deep:#12291f;--green:#18805c;--lime:#c6d94e;--bg:#f3f2ed;--card:#fff;
+--border:#e4e2d9;--rule:#e8e6de;--ink:#1c2621;--ink-2:#3d4842;--sec:#66706a;--mono:'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,'Segoe UI',Roboto,system-ui,sans-serif}
+a{color:#11603f}a:hover{color:#0b4a30}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.muted{color:var(--sec)} .mono{font-family:var(--mono);font-size:.92em}
+header{background:var(--forest);color:#fff}
+nav{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.brand{color:#fff;text-decoration:none;font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px;padding:14px 0}
+.brand:hover{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
+.tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
+.tabs a.on,.tabs a:hover{color:#fff}.tabs a.on{border-bottom-color:var(--lime)}
+.stamp{font-size:13px;color:#c9d8cf}
+main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
+.hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:780px}
+.panel{background:var(--forest);color:#fff;border-radius:18px;padding:26px 28px}
+.panel h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.sig{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;margin-top:14px}
+@media(max-width:820px){.sig{grid-template-columns:1fr}}
+.sig h3{margin:0;font-size:30px;font-weight:700;letter-spacing:-.3px;line-height:1.2}
+.sig .sub{margin:8px 0 0;color:#c9d8cf;font-size:15px;line-height:1.5}
+.sig ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.sig li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:#e7efe9}
+.sig li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.sig .mono{color:#fff}
+.ask{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px}
+.big{font-size:44px;font-weight:700;line-height:1;margin-top:6px}
+.big span{font-size:16px;font-weight:500;color:#c9d8cf}
+.route{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-size:14px}
+.route div{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.08)}
+.route b{white-space:nowrap;text-align:right}
+.route .yes b{color:var(--lime)}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.mini{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.mini .ic{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#eef5d0}
+.mini h3{margin:0;font-size:17px;font-weight:600}
+.mini p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.card h2{margin:0 0 4px;font-size:18px;font-weight:600}
+.scroll{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:640px;margin-top:10px}
+.tbl th{text-align:left;font-size:12px;font-weight:600;color:var(--sec);padding:10px 10px;border-bottom:1px solid var(--border)}
+.tbl td{padding:12px 10px;border-bottom:1px solid #efede6;vertical-align:top;line-height:1.45}
+.tbl td:first-child{font-weight:600;width:22%}
+.tbl tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.tag.ok{background:#e3f1ea;color:#18805c}.tag.warn{background:#fbf1d8;color:#9a6b05}.tag.no{background:#fbe3e8;color:#b8304d}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:14px}
+.check{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.check li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.5}
+.check li:last-child{border-bottom:none}
+.check .n,.check .x{font-family:var(--mono);font-size:12px;font-weight:600;border-radius:6px;height:22px;display:grid;place-items:center}
+.check .n{color:var(--forest);background:#eef5d0}
+.check .x{color:#9a6b05;background:#fbf1d8}
+.check b{font-weight:600}
+.tip{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:820px){.tip{grid-template-columns:1fr}}
+.tip p{margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;font-size:14px;line-height:1.5;background:var(--bg);border-radius:10px;padding:10px 12px 10px 46px}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--green)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+.pager a{text-decoration:none;font-weight:600}
+.series{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:14px}
+.op{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px 22px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+.op:hover{border-color:var(--green);transform:translateY(-2px);color:var(--ink)}
+.op .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.op .nr{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--forest);background:#eef5d0;border-radius:6px;padding:2px 8px}
+.op .grp{font-size:12px;color:var(--sec)}
+.op h3{margin:4px 0 0;font-size:20px;font-weight:700;letter-spacing:-.2px}
+.op p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.op .rule{border-left:3px solid var(--lime);padding-left:10px;font-weight:600;color:var(--ink)}
+footer{border-top:1px solid var(--border)}
+footer .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--sec)}
+@media(max-width:600px){.wrap{padding:0 16px}.panel{padding:20px}.card{padding:18px}.stamp{display:none}}
+@media print{
+  @page{size:A4;margin:10mm}
+  html{zoom:var(--pz,.52)}
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  main.wrap{padding-top:16px;padding-bottom:0;gap:14px}
+  .card,.mini,.panel,.op{break-inside:avoid}
+  .tbl{min-width:0}.pager{display:none}
+  nav{min-height:44px}.brand{padding:8px 0}.tabs a{padding:12px 0 9px}
+}
+</style><style>:root{--pz:0.47}</style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Serie">
+  <a class="brand" href="index.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6d94e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg> M365+</a>
+  <div class="tabs"><a href="index.html">Alle</a><a href="01-teams-chat-eller-kanal.html">Teams</a><a href="04-outlook-triage.html" class="on">Outlook</a><a href="07-kalender-og-tid.html">Planlægning</a><a href="08-loop-eller-onenote.html">Loop &amp; OneNote</a><a href="09-copilot-i-teams-moder.html">Copilot</a></div>
+  <span class="stamp">Onepager 4 af 9</span>
+</nav></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+    <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev · Microsoft 365 i hverdagen · Outlook</p>
+    <h1 id="hero-title">Fra indbakke til triage</h1>
+    <p class="lead">En rodet indbakke skyldes sjældent mængden. Den skyldes, at <b>ingen mail har fået en beslutning</b>. Når “ulæst” bruges som huskeseddel, skal du læse den samme bunke igen og igen. Outlook har et værktøj til hver af de beslutninger, en mail kan kræve.</p>
+  </section>
+<section class="panel" aria-labelledby="rule-title">
+    <h2 id="rule-title">Tommelfingerregel</h2>
+    <div class="sig">
+      <div>
+        <h3>Synlig nu, senere eller aldrig igen.<br>Én beslutning pr. mail.</h3>
+        <p class="sub">Hvert værktøj løser én opgave. Problemerne opstår, når ét værktøj skal løse dem alle.</p>
+        <ul><li><b>Fastgør (Pin)</b> betyder “kig på det her i dag”. Det er et synlighedsværktøj, ikke en to do-liste.</li><li><b>Flag med dato</b> betyder “jeg skylder nogen en handling”. Sæt start- og forfaldsdato samt påmindelse i stedet for et generisk flag.</li><li><b>Quick Steps</b> er til mails, der kræver dit blik, men hvor svaret altid er det samme: flyt, markér som læst, videresend og flag med ét klik.</li><li><b>Regler</b> er til mails, der ikke kræver nogen vurdering, fx nyhedsbreve og systembeskeder.</li></ul>
+      </div>
+      <div class="ask">
+        <div style="font-size:13px;color:#c9d8cf">Hvad kræver mailen?</div>
+        <div class="big">3 <span>beslutninger</span></div>
+        <div style="font-size:14px;color:#e7efe9;margin-top:8px;line-height:1.5">Tag stilling første gang, du ser den. Så skal du aldrig læse den igen.</div>
+        <div class="route"><div class="yes"><span>Skal ses i dag</span><b>→ Fastgør eller kategori</b></div><div><span>Vigtig, men ikke nu</span><b>→ Flag med dato</b></div><div><span>Kræver blik, så altid samme rutine</span><b>→ Quick Step</b></div><div><span>Gentagen støj uden vurdering</span><b>→ Regel</b></div></div>
+      </div>
+    </div>
+  </section>
+<section class="card" aria-labelledby="tbl-title">
+    <h2 id="tbl-title">Fire værktøjer, fire opgaver</h2>
+    <p class="muted" style="margin:0;font-size:13px">Brug det rigtige til det rigtige, så indbakken ikke bliver en to do-liste.</p>
+    <div class="scroll"><table class="tbl"><thead><tr><th>Værktøj</th><th>Hvad det siger</th><th>Hvor det findes</th><th>Faldgrube</th></tr></thead><tbody><tr><td>Fastgør (Pin)</td><td>“Hold det i synsfeltet i dag”</td><td>New Outlook, web og mobil <span class="tag no">ikke Classic</span></td><td>Ingen grænse og intet udløb. Hver fastgjort mail koster en synlig linje ny post</td></tr><tr><td>Flag</td><td>“Jeg skylder en handling”</td><td>Alle versioner. <span class="mono">Ctrl+Shift+G</span> i Classic</td><td>Et flag uden dato bliver glemt</td></tr><tr><td>Quick Step</td><td>“Samme rutine, ét klik”</td><td>Classic: fanen Home <span class="tag warn">delvist i New</span></td><td>For mange gør galleriet uoverskueligt. Hold dig til 3–6</td></tr><tr><td>Regel</td><td>“Det her skal jeg ikke se”</td><td>Alle versioner</td><td>Brugt på mails, der kræver vurdering, skjuler den det vigtige</td></tr></tbody></table></div>
+  </section>
+<section class="grid2"><div class="card" aria-labelledby="l0">
+      <h2 id="l0">Tjekliste</h2>
+      <p class="muted" style="margin:0;font-size:13px">Vaner, der holder indbakken ren</p>
+      <ul class="check"><li><span class="n">1</span><span><b>Højst fem fastgjorte mails.</b> Skal der en sjette op, er en af de fem færdig, eller også var den aldrig en pin.</span></li><li><span class="n">2</span><span><b>Fastgør kun tre slags mails:</b> du venter på svar, den skal besvares før fyraften, eller du bruger den ofte i løbet af dagen.</span></li><li><span class="n">3</span><span><b>Fjern fastgørelser, inden du går hjem.</b> Det tager et halvt minut, og i morgen starter indbakken ren.</span></li><li><span class="n">4</span><span><b>Lav 3–6 Quick Steps</b> til dine hyppigste rutiner, fx “Arkivér og flag til fredag”, “Videresend og færdig” og “Læst og arkivér”. Giv de vigtigste en genvej (<span class="mono">Ctrl+Shift+1–9</span>).</span></li><li><span class="n">5</span><span><b>I Classic:</b> Hav <i>View → To-Do Bar → Tasks</i> åben, så flaggede mails står ved siden af indbakken i stedet for oven på den.</span></li></ul>
+    </div><div class="card" aria-labelledby="l1">
+      <h2 id="l1">Det løser det ikke</h2>
+      <p class="muted" style="margin:0;font-size:13px">Begrænsninger, du skal kende</p>
+      <ul class="check"><li><span class="x">!</span><span><b>Fastgør findes ikke i Classic Outlook.</b> Brug flag i stedet.</span></li><li><span class="x">!</span><span><b>Quick Steps i New Outlook</b> skal bygges forfra, virker kun med Exchange Online, understøtter ikke delte postkasser og kan ikke importeres fra Classic.</span></li><li><span class="x">!</span><span><b>En fastgjort mail har ingen påmindelse.</b> Den bliver liggende, indtil du fjerner den, typisk længe efter at den holdt op med at være vigtig.</span></li><li><span class="x">!</span><span><b>Regler kender ikke forskel på vigtigt og uvigtigt.</b> Brug dem kun, hvor du aldrig behøver at se mailen først.</span></li></ul>
+    </div></section>
+<section class="card" aria-labelledby="bonus-title">
+    <div class="tip">
+      <div>
+        <div class="kicker">Bonus · Classic Outlook</div>
+        <h2 id="bonus-title" style="margin-top:4px">En “Nu”-liste over indbakken</h2>
+        <p>Har du ikke Fastgør, kan en kategori og en søgemappe give det samme: én kort liste over det, der skal ses i dag. Den står over indbakken i Favoritter, så du tjekker den først.</p>
+      </div>
+      <ol class="steps"><li>Højreklik på en mail → <i>Categorize → All Categories</i>, og opret kategorien <b>Nu</b>.</li><li>Højreklik på <i>Search Folders</i> → <i>New Search Folder</i> → <i>Categorized mail</i>, og vælg <b>Nu</b>.</li><li>Højreklik på den nye søgemappe → <i>Add to Favorites</i>.</li><li>Fjern kategorien, når mailen er klaret. Så tømmer listen sig selv.</li></ol>
+    </div>
+  </section>
+<nav class="pager" aria-label="Bladr"><a href="03-teams-notifikationer.html">← 3. Teams-notifikationer under kontrol</a><a href="05-outlook-find-og-sorter.html">5. Find og sortér hurtigt →</a></nav>
+</main>
+<footer><div class="wrap">
+  <span>Baseret på Lea Davids nyhedsbrev (22.7, 26.8 og 21.10.2026), skrevet om med egne ord · Mere hos <a href="https://m365coaching.com">m365coaching.com</a></span>
+  <span>M365+ · VibrantColor.dev</span>
+</div></footer>
+</body>
+</html>

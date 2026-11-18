@@ -1,0 +1,67 @@
+{
+  "nr": 5,
+  "tab": "Outlook",
+  "title": "Find og sortér hurtigt",
+  "teaser": "Søgeoperatorer, farvekategorier og alarmer, der kun lyder, når det gælder.",
+  "sources": ["2026-02-11", "2026-03-18", "2026-04-01"],
+  "lead": "Du ved, at mailen findes, men søgningen giver 247 hits. Med <b>søgeoperatorer</b> finder du den på ti sekunder, og med <b>farvekategorier</b> kan du se prioriteten uden at læse emnelinjen.",
+  "rule": {
+    "title": "Fortæl Outlook præcis, hvad du leder efter.<br>Lad farverne læse for dig.",
+    "sub": "En almindelig søgning kigger alle steder. En operator fortæller Outlook, hvor den skal kigge.",
+    "bullets": [
+      "<span class=\"mono\">from:</span>, <span class=\"mono\">subject:</span>, <span class=\"mono\">received:</span> og <span class=\"mono\">hasattachments:yes</span> skrives direkte i søgefeltet og kan kombineres med <span class=\"mono\">AND</span>, <span class=\"mono\">OR</span> og <span class=\"mono\">NOT</span>.",
+      "<b>Kategorier</b> er farvede mærker. En mail kan have flere, og de virker også i kalender, kontakter og opgaver.",
+      "Hold dig til <b>5–7 kategorier</b> med tastaturgenveje. Flere end det, og du bruger tid på at vælge farve.",
+      "<b>Slå generelle popup-alarmer fra,</b> og lad en regel sørge for, at vigtige afsendere stadig udløser en alarm."
+    ],
+    "ask": {
+      "label": "Start småt",
+      "big": "1", "unit": "operator ad gangen",
+      "q": "Vælg den operator, der løser dit hyppigste problem. Når den sidder på rygraden, så tag den næste.",
+      "routes": [
+        {"if": "Du leder efter en bestemt person", "then": "from:", "yes": true},
+        {"if": "Du leder efter en vedhæftet fil", "then": "hasattachments:yes"},
+        {"if": "Du ved cirka, hvornår den kom", "then": "received:"}
+      ]
+    }
+  },
+  "table": {
+    "title": "Søgeoperatorer, du kan bruge i morgen",
+    "sub": "Skrives direkte i Outlooks søgefelt. Kombinér dem for at ramme præcist.",
+    "cols": ["Operator", "Eksempel", "Finder"],
+    "rows": [
+      ["<span class=\"mono\">from:</span>", "<span class=\"mono\">from:anna@firma.dk</span>", "Kun mails fra den afsender"],
+      ["<span class=\"mono\">subject:</span>", "<span class=\"mono\">subject:\"Q1 budget\"</span>", "Den præcise frase i emnelinjen"],
+      ["<span class=\"mono\">received:</span>", "<span class=\"mono\">received:last week</span>", "Mails fra en periode. Virker også med <i>yesterday</i> eller en dato"],
+      ["<span class=\"mono\">hasattachments:yes</span>", "<span class=\"mono\">hasattachments:yes</span>", "Kun mails med vedhæftede filer"],
+      ["<span class=\"mono\">category:</span>", "<span class=\"mono\">category:\"Svar i dag\"</span>", "Mails med en bestemt farvekategori"],
+      ["<span class=\"mono\">AND / OR / NOT</span>", "<span class=\"mono\">from:jura AND hasattachments:yes AND received:last month</span>", "Kombinationer. Her: kontrakten fra jura sidste måned"]
+    ]
+  },
+  "lists": [
+    {"title": "Farvekategorier på fem minutter", "sub": "Fra at læse til at scanne", "mark": "n", "items": [
+      "<b>Omdøb farverne:</b> <i>Categorize → All Categories → Rename</i>. Fx Rød = Svar i dag, Orange = Opfølgning denne uge, Gul = Venter på andre, Grøn = Reference, Blå = Læs senere.",
+      "<b>Giv dem genveje</b> i samme dialog, fx <span class=\"mono\">Ctrl+F2</span>, <span class=\"mono\">Ctrl+F3</span> og så videre.",
+      "<b>Kategorisér, når mailen kommer,</b> ikke i én stor bunke sidst på dagen.",
+      "<b>Lav en visning grupperet efter kategori,</b> så de røde står øverst og de grønne nederst.",
+      "<b>Ryd op én gang om ugen:</b> fjern farven fra det, der er afsluttet, og brug gerne de samme farver i kalenderen."
+    ]},
+    {"title": "Det løser det ikke", "sub": "Begrænsninger, du skal kende", "mark": "x", "items": [
+      "<b>Mails, som en regel flytter ud af indbakken, giver ingen skrivebordsalarm.</b> Alarmen kommer kun for mails i Inbox. Brug <i>move a copy to</i>, hvis alarmen skal komme.",
+      "<b>Kategorier kan kun ses af dig.</b> De er ikke en måde at kommunikere prioritet til andre på.",
+      "<b>Søgning finder det, der står der.</b> Brug afsenderens ord, ikke dine egne.",
+      "<b>Operatorer hjælper dig med at finde ting,</b> men de forhindrer ikke, at indbakken roder. Se onepager 4 om triage."
+    ]}
+  ],
+  "bonus": {
+    "kicker": "Bonus · Stille Outlook uden at misse godkendelser",
+    "title": "Kun alarm, når det gælder",
+    "paras": ["Slå den generelle støj fra, og byg en målrettet vej til det, der ikke må vente, fx godkendelser fra en kunde eller emner med “godkendelse” i emnelinjen. Flaggede mails dukker op som opgaver i Microsoft To Do, så du kan gennemgå dem i dine fokusblokke i stedet for hele tiden at tjekke indbakken."],
+    "steps": [
+      "<i>File → Options → Mail → Message arrival</i>: fjern popup, konvolut-ikon og lyd.",
+      "Højreklik på en mail fra den vigtige afsender → <i>Rules → Create Rule → Advanced Options</i>: tildel kategorien <b>Afventer godkendelse</b>, og vælg <i>move a copy to</i> projektmappen.",
+      "Originalen bliver i indbakken og udløser alarmen. Kopien bliver arkiveret.",
+      "Flag godkendelsen med en påmindelse. I To Do slår du listen <i>Flagged email</i> til."
+    ]
+  }
+}

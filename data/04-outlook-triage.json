@@ -1,0 +1,122 @@
+{
+  "nr": 4,
+  "tab": "Outlook",
+  "print_zoom": 0.47,
+  "title": "Fra indbakke til triage",
+  "teaser": "Fastgør, flag, Quick Steps eller regel? Én beslutning pr. mail.",
+  "sources": [
+    "2026-07-22",
+    "2026-08-26",
+    "2026-10-21"
+  ],
+  "lead": "En rodet indbakke skyldes sjældent mængden. Den skyldes, at <b>ingen mail har fået en beslutning</b>. Når “ulæst” bruges som huskeseddel, skal du læse den samme bunke igen og igen. Outlook har et værktøj til hver af de beslutninger, en mail kan kræve.",
+  "rule": {
+    "title": "Synlig nu, senere eller aldrig igen.<br>Én beslutning pr. mail.",
+    "sub": "Hvert værktøj løser én opgave. Problemerne opstår, når ét værktøj skal løse dem alle.",
+    "bullets": [
+      "<b>Fastgør (Pin)</b> betyder “kig på det her i dag”. Det er et synlighedsværktøj, ikke en to do-liste.",
+      "<b>Flag med dato</b> betyder “jeg skylder nogen en handling”. Sæt start- og forfaldsdato samt påmindelse i stedet for et generisk flag.",
+      "<b>Quick Steps</b> er til mails, der kræver dit blik, men hvor svaret altid er det samme: flyt, markér som læst, videresend og flag med ét klik.",
+      "<b>Regler</b> er til mails, der ikke kræver nogen vurdering, fx nyhedsbreve og systembeskeder."
+    ],
+    "ask": {
+      "label": "Hvad kræver mailen?",
+      "big": "3",
+      "unit": "beslutninger",
+      "q": "Tag stilling første gang, du ser den. Så skal du aldrig læse den igen.",
+      "routes": [
+        {
+          "if": "Skal ses i dag",
+          "then": "Fastgør eller kategori",
+          "yes": true
+        },
+        {
+          "if": "Vigtig, men ikke nu",
+          "then": "Flag med dato"
+        },
+        {
+          "if": "Kræver blik, så altid samme rutine",
+          "then": "Quick Step"
+        },
+        {
+          "if": "Gentagen støj uden vurdering",
+          "then": "Regel"
+        }
+      ]
+    }
+  },
+  "table": {
+    "title": "Fire værktøjer, fire opgaver",
+    "sub": "Brug det rigtige til det rigtige, så indbakken ikke bliver en to do-liste.",
+    "cols": [
+      "Værktøj",
+      "Hvad det siger",
+      "Hvor det findes",
+      "Faldgrube"
+    ],
+    "rows": [
+      [
+        "Fastgør (Pin)",
+        "“Hold det i synsfeltet i dag”",
+        "New Outlook, web og mobil <span class=\"tag no\">ikke Classic</span>",
+        "Ingen grænse og intet udløb. Hver fastgjort mail koster en synlig linje ny post"
+      ],
+      [
+        "Flag",
+        "“Jeg skylder en handling”",
+        "Alle versioner. <span class=\"mono\">Ctrl+Shift+G</span> i Classic",
+        "Et flag uden dato bliver glemt"
+      ],
+      [
+        "Quick Step",
+        "“Samme rutine, ét klik”",
+        "Classic: fanen Home <span class=\"tag warn\">delvist i New</span>",
+        "For mange gør galleriet uoverskueligt. Hold dig til 3–6"
+      ],
+      [
+        "Regel",
+        "“Det her skal jeg ikke se”",
+        "Alle versioner",
+        "Brugt på mails, der kræver vurdering, skjuler den det vigtige"
+      ]
+    ]
+  },
+  "lists": [
+    {
+      "title": "Tjekliste",
+      "sub": "Vaner, der holder indbakken ren",
+      "mark": "n",
+      "items": [
+        "<b>Højst fem fastgjorte mails.</b> Skal der en sjette op, er en af de fem færdig, eller også var den aldrig en pin.",
+        "<b>Fastgør kun tre slags mails:</b> du venter på svar, den skal besvares før fyraften, eller du bruger den ofte i løbet af dagen.",
+        "<b>Fjern fastgørelser, inden du går hjem.</b> Det tager et halvt minut, og i morgen starter indbakken ren.",
+        "<b>Lav 3–6 Quick Steps</b> til dine hyppigste rutiner, fx “Arkivér og flag til fredag”, “Videresend og færdig” og “Læst og arkivér”. Giv de vigtigste en genvej (<span class=\"mono\">Ctrl+Shift+1–9</span>).",
+        "<b>I Classic:</b> Hav <i>View → To-Do Bar → Tasks</i> åben, så flaggede mails står ved siden af indbakken i stedet for oven på den."
+      ]
+    },
+    {
+      "title": "Det løser det ikke",
+      "sub": "Begrænsninger, du skal kende",
+      "mark": "x",
+      "items": [
+        "<b>Fastgør findes ikke i Classic Outlook.</b> Brug flag i stedet.",
+        "<b>Quick Steps i New Outlook</b> skal bygges forfra, virker kun med Exchange Online, understøtter ikke delte postkasser og kan ikke importeres fra Classic.",
+        "<b>En fastgjort mail har ingen påmindelse.</b> Den bliver liggende, indtil du fjerner den, typisk længe efter at den holdt op med at være vigtig.",
+        "<b>Regler kender ikke forskel på vigtigt og uvigtigt.</b> Brug dem kun, hvor du aldrig behøver at se mailen først."
+      ]
+    }
+  ],
+  "bonus": {
+    "kicker": "Bonus · Classic Outlook",
+    "title": "En “Nu”-liste over indbakken",
+    "paras": [
+      "Har du ikke Fastgør, kan en kategori og en søgemappe give det samme: én kort liste over det, der skal ses i dag. Den står over indbakken i Favoritter, så du tjekker den først."
+    ],
+    "steps": [
+      "Højreklik på en mail → <i>Categorize → All Categories</i>, og opret kategorien <b>Nu</b>.",
+      "Højreklik på <i>Search Folders</i> → <i>New Search Folder</i> → <i>Categorized mail</i>, og vælg <b>Nu</b>.",
+      "Højreklik på den nye søgemappe → <i>Add to Favorites</i>.",
+      "Fjern kategorien, når mailen er klaret. Så tømmer listen sig selv."
+    ]
+  }
+}

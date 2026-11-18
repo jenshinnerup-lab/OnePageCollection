@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M365+ · Microsoft 365 i hverdagen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a4231;--forest-deep:#12291f;--green:#18805c;--lime:#c6d94e;--bg:#f3f2ed;--card:#fff;
+--border:#e4e2d9;--rule:#e8e6de;--ink:#1c2621;--ink-2:#3d4842;--sec:#66706a;--mono:'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,'Segoe UI',Roboto,system-ui,sans-serif}
+a{color:#11603f}a:hover{color:#0b4a30}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.muted{color:var(--sec)} .mono{font-family:var(--mono);font-size:.92em}
+header{background:var(--forest);color:#fff}
+nav{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.brand{color:#fff;text-decoration:none;font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px;padding:14px 0}
+.brand:hover{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
+.tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
+.tabs a.on,.tabs a:hover{color:#fff}.tabs a.on{border-bottom-color:var(--lime)}
+.stamp{font-size:13px;color:#c9d8cf}
+main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
+.hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:780px}
+.panel{background:var(--forest);color:#fff;border-radius:18px;padding:26px 28px}
+.panel h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.sig{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;margin-top:14px}
+@media(max-width:820px){.sig{grid-template-columns:1fr}}
+.sig h3{margin:0;font-size:30px;font-weight:700;letter-spacing:-.3px;line-height:1.2}
+.sig .sub{margin:8px 0 0;color:#c9d8cf;font-size:15px;line-height:1.5}
+.sig ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.sig li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:#e7efe9}
+.sig li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.sig .mono{color:#fff}
+.ask{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px}
+.big{font-size:44px;font-weight:700;line-height:1;margin-top:6px}
+.big span{font-size:16px;font-weight:500;color:#c9d8cf}
+.route{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-size:14px}
+.route div{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.08)}
+.route b{white-space:nowrap;text-align:right}
+.route .yes b{color:var(--lime)}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.mini{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.mini .ic{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#eef5d0}
+.mini h3{margin:0;font-size:17px;font-weight:600}
+.mini p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.card h2{margin:0 0 4px;font-size:18px;font-weight:600}
+.scroll{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:640px;margin-top:10px}
+.tbl th{text-align:left;font-size:12px;font-weight:600;color:var(--sec);padding:10px 10px;border-bottom:1px solid var(--border)}
+.tbl td{padding:12px 10px;border-bottom:1px solid #efede6;vertical-align:top;line-height:1.45}
+.tbl td:first-child{font-weight:600;width:22%}
+.tbl tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.tag.ok{background:#e3f1ea;color:#18805c}.tag.warn{background:#fbf1d8;color:#9a6b05}.tag.no{background:#fbe3e8;color:#b8304d}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:14px}
+.check{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.check li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.5}
+.check li:last-child{border-bottom:none}
+.check .n,.check .x{font-family:var(--mono);font-size:12px;font-weight:600;border-radius:6px;height:22px;display:grid;place-items:center}
+.check .n{color:var(--forest);background:#eef5d0}
+.check .x{color:#9a6b05;background:#fbf1d8}
+.check b{font-weight:600}
+.tip{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:820px){.tip{grid-template-columns:1fr}}
+.tip p{margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;font-size:14px;line-height:1.5;background:var(--bg);border-radius:10px;padding:10px 12px 10px 46px}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--green)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+.pager a{text-decoration:none;font-weight:600}
+.series{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:14px}
+.op{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px 22px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+.op:hover{border-color:var(--green);transform:translateY(-2px);color:var(--ink)}
+.op .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.op .nr{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--forest);background:#eef5d0;border-radius:6px;padding:2px 8px}
+.op .grp{font-size:12px;color:var(--sec)}
+.op h3{margin:4px 0 0;font-size:20px;font-weight:700;letter-spacing:-.2px}
+.op p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.op .rule{border-left:3px solid var(--lime);padding-left:10px;font-weight:600;color:var(--ink)}
+footer{border-top:1px solid var(--border)}
+footer .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--sec)}
+@media(max-width:600px){.wrap{padding:0 16px}.panel{padding:20px}.card{padding:18px}.stamp{display:none}}
+@media print{
+  @page{size:A4;margin:10mm}
+  html{zoom:var(--pz,.52)}
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  main.wrap{padding-top:16px;padding-bottom:0;gap:14px}
+  .card,.mini,.panel,.op{break-inside:avoid}
+  .tbl{min-width:0}.pager{display:none}
+  nav{min-height:44px}.brand{padding:8px 0}.tabs a{padding:12px 0 9px}
+}
+</style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Serie">
+  <a class="brand" href="index.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6d94e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg> M365+</a>
+  <div class="tabs"><a href="index.html" class="on">Alle</a><a href="01-teams-chat-eller-kanal.html">Teams</a><a href="04-outlook-triage.html">Outlook</a><a href="07-kalender-og-tid.html">Planlægning</a><a href="08-loop-eller-onenote.html">Loop &amp; OneNote</a><a href="09-copilot-i-teams-moder.html">Copilot</a></div>
+  <span class="stamp">9 onepagers</span>
+</nav></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+    <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev · Microsoft 365 i hverdagen</p>
+    <h1 id="hero-title">M365+ onepagers</h1>
+    <p class="lead">Korte, praktiske sider om Teams, Outlook, To Do, Planner, Loop, OneNote og Copilot. Hver side har en tommelfingerregel, en tjekliste og de begrænsninger, du skal kende. Siderne kan deles med kolleger og udskrives på én A4-side.</p>
+  </section>
+<section class="series" aria-label="Serien"><a class="op" href="01-teams-chat-eller-kanal.html">
+      <div class="top"><span class="nr">01</span><span class="grp">Teams</span></div>
+      <h3>Chat eller kanal?</h3>
+      <p>Hvem ejer filerne, og hvem kan finde beslutningen om et halvt år?</p>
+      <p class="rule">Chatten er til samtalen. Kanalen er til konklusionen.</p>
+    </a><a class="op" href="02-teams-find-det-igen.html">
+      <div class="top"><span class="nr">02</span><span class="grp">Teams</span></div>
+      <h3>Find det igen i Teams</h3>
+      <p>To søgefelter, der svarer på to forskellige spørgsmål. Lær dem begge.</p>
+      <p class="rule">Kender du samtalen, så søg i den. Kender du kun personen, så søg i alt.</p>
+    </a><a class="op" href="03-teams-notifikationer.html">
+      <div class="top"><span class="nr">03</span><span class="grp">Teams</span></div>
+      <h3>Teams-notifikationer under kontrol</h3>
+      <p>Fire niveauer, fem minutters opsætning, og telefonen holder op med at summe.</p>
+      <p class="rule">Bestem selv, hvad der må afbryde dig. Resten venter, til du kigger.</p>
+    </a><a class="op" href="04-outlook-triage.html">
+      <div class="top"><span class="nr">04</span><span class="grp">Outlook</span></div>
+      <h3>Fra indbakke til triage</h3>
+      <p>Fastgør, flag, Quick Steps eller regel? Én beslutning pr. mail.</p>
+      <p class="rule">Synlig nu, senere eller aldrig igen. Én beslutning pr. mail.</p>
+    </a><a class="op" href="05-outlook-find-og-sorter.html">
+      <div class="top"><span class="nr">05</span><span class="grp">Outlook</span></div>
+      <h3>Find og sortér hurtigt</h3>
+      <p>Søgeoperatorer, farvekategorier og alarmer, der kun lyder, når det gælder.</p>
+      <p class="rule">Fortæl Outlook præcis, hvad du leder efter. Lad farverne læse for dig.</p>
+    </a><a class="op" href="06-ny-eller-klassisk-outlook.html">
+      <div class="top"><span class="nr">06</span><span class="grp">Outlook</span></div>
+      <h3>Ny eller klassisk Outlook?</h3>
+      <p>Tre ting afgør skiftet, og en 5-minutters-test, før du beslutter dig. Plus sikker uddelegering.</p>
+      <p class="rule">Skift, når det sidste på din daglige liste virker. Ikke når det første gør.</p>
+    </a><a class="op" href="07-kalender-og-tid.html">
+      <div class="top"><span class="nr">07</span><span class="grp">Planlægning</span></div>
+      <h3>Kalender, To Do eller Planner?</h3>
+      <p>Blokér tid til dine prioriteter, og læg gentaget arbejde det rigtige sted.</p>
+      <p class="rule">Skal det efterlade et spor, når det ikke bliver gjort, er det en opgave. Skal det bare gå forbi, er det en aftale.</p>
+    </a><a class="op" href="08-loop-eller-onenote.html">
+      <div class="top"><span class="nr">08</span><span class="grp">Loop &amp; OneNote</span></div>
+      <h3>Loop eller OneNote?</h3>
+      <p>Arkiv eller levende samarbejde, og hvem ejer egentlig den Loop-komponent?</p>
+      <p class="rule">Opret det dér, hvor det skal ende. Loop flytter det ikke for dig.</p>
+    </a><a class="op" href="09-copilot-i-teams-moder.html">
+      <div class="top"><span class="nr">09</span><span class="grp">Copilot</span></div>
+      <h3>Copilot i Teams-møder</h3>
+      <p>Copilot læser transskriptet, ikke lyden. Fejl i teksten bliver til fejl i referatet.</p>
+      <p class="rule">Dit referat er aldrig bedre end dit transskript.</p>
+    </a></section>
+</main>
+<footer><div class="wrap">
+  <span>Opsummeret med egne ord fra Lea Davids nyhedsbrev om Microsoft 365 · Mere hos <a href="https://m365coaching.com">m365coaching.com</a></span>
+  <span>M365+ · VibrantColor.dev</span>
+</div></footer>
+</body>
+</html>

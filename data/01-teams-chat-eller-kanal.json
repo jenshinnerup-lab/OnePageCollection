@@ -1,0 +1,137 @@
+{
+  "nr": 1,
+  "tab": "Teams",
+  "print_zoom": 0.47,
+  "title": "Chat eller kanal?",
+  "teaser": "Hvem ejer filerne, og hvem kan finde beslutningen om et halvt år?",
+  "sources": [
+    "2026-07-15",
+    "2026-10-07",
+    "2026-11-18"
+  ],
+  "lead": "De fleste vælger ud fra, hvor formel beskeden føles. Men det, der virkelig betyder noget, er <b>hvem der skal kunne finde den igen</b>, og <b>hvem der ejer filerne</b>, når kollegaen, der delte dem, har forladt firmaet.",
+  "rule": {
+    "title": "Chatten er til samtalen.<br>Kanalen er til konklusionen.",
+    "sub": "Brug chat til det hurtige og flygtige. Alt, hvad holdet skal kunne bygge videre på, hører hjemme i en kanal.",
+    "bullets": [
+      "Filer delt i en chat ligger i <b>afsenderens egen OneDrive</b>. De andre ser blot et link til afsenderens kopi.",
+      "Filer delt i en kanal ligger på <b>teamets SharePoint</b> i en mappe med kanalens navn. De tilhører teamet.",
+      "Nye teammedlemmer kan læse en kanal helt tilbage til første opslag. I en gruppechat afhænger det af, hvad der blev valgt, da de blev tilføjet.",
+      "En chat kan ikke laves om til en kanal. Det skal besluttes, før projektet vokser."
+    ],
+    "ask": {
+      "label": "Spørg dig selv, før du trykker send",
+      "big": "6",
+      "unit": "måneder",
+      "q": "Skal nogen kunne bruge det her om et halvt år, uden at du er der til at forklare det?",
+      "routes": [
+        {
+          "if": "Ja, en beslutning, en fil eller en baggrund",
+          "then": "Kanal",
+          "yes": true
+        },
+        {
+          "if": "Nej, aftaler, hurtige spørgsmål, “jeg er 5 min forsinket”",
+          "then": "Chat"
+        },
+        {
+          "if": "Personligt eller fortroligt",
+          "then": "Chat"
+        }
+      ]
+    }
+  },
+  "duo": [
+    {
+      "icon": "chat",
+      "title": "Chat = et mødelokale med gæsteliste",
+      "text": "Kun de inviterede er med, og indholdet flyder som én lang strøm. Det, der blev skrevet tirsdag, er begravet torsdag."
+    },
+    {
+      "icon": "shelf",
+      "title": "Kanal = teamets fælles reol",
+      "text": "Alle i teamet har adgang. Hvert opslag samler sine svar, så beslutningen og argumenterne bag den bliver stående sammen."
+    }
+  ],
+  "table": {
+    "title": "Sådan opfører de to sig",
+    "sub": "Det samme træk-og-slip af en fil giver to helt forskellige ejere.",
+    "cols": [
+      "",
+      "Chat (1:1 eller gruppe)",
+      "Kanal (standard)"
+    ],
+    "rows": [
+      [
+        "Hvor ligger filerne?",
+        "I afsenderens OneDrive, mappen <span class=\"mono\">Microsoft Teams Chat Files</span> <span class=\"tag warn\">personlig</span>",
+        "På teamets SharePoint-websted, i en mappe med kanalens navn <span class=\"tag ok\">teamets</span>"
+      ],
+      [
+        "Når en kollega stopper",
+        "Kontoen lukkes, og filerne kan forsvinde med den",
+        "Filerne bliver, fordi de tilhører teamet"
+      ],
+      [
+        "Nye deltagere",
+        "Ved tilføjelse vælger man al historik, de seneste X dage eller ingen. Vælges der forkert, er konteksten væk",
+        "Kan læse kanalen helt tilbage til første opslag, uden at nogen skal tage stilling"
+      ],
+      [
+        "Struktur",
+        "Én flad strøm af beskeder",
+        "Opslag med tilknyttede svar. Kan få en emnelinje via <b>Format</b>-knappen, så de er nemme at finde igen"
+      ],
+      [
+        "Notifikationer",
+        "Pinger dig, så du opdager det",
+        "Er stille, indtil nogen @nævner dig. Slå notifikationer til for vigtige kanaler"
+      ],
+      [
+        "Bedst til",
+        "Aftaler, hurtige spørgsmål og personlige eller fortrolige emner",
+        "Beslutninger, projektfiler og alt, hvad nye folk skal kunne finde"
+      ]
+    ]
+  },
+  "lists": [
+    {
+      "title": "Tjekliste",
+      "sub": "Fem vaner, der forhindrer, at viden forsvinder",
+      "mark": "n",
+      "items": [
+        "<b>Brug 6-måneders-testen.</b> Kan en ny kollega handle på det uden dig, skal det i en kanal.",
+        "<b>Giv kanalopslag en emnelinje.</b> Brug Format-knappen (A med pen) under skrivefeltet. Det tager to sekunder.",
+        "<b>Flyt konklusionen, ikke samtalen.</b> Når en chat ender med en beslutning, så skriv udfaldet én gang i kanalen.",
+        "<b>Lyt efter advarslen.</b> Er det anden gang i denne uge, du lægger en fil i gruppechatten, er projektet vokset fra chatten.",
+        "<b>Tjek din OneDrive én gang om måneden.</b> Alt i <i>Microsoft Teams Chat Files</i>, som andre er afhængige af, har kun ét svagt punkt: dig."
+      ]
+    },
+    {
+      "title": "Det løser det ikke",
+      "sub": "Begrænsninger, du skal kende",
+      "mark": "x",
+      "items": [
+        "<b>En chat kan ikke konverteres til en kanal.</b> Beskeder kan ikke flyttes. Det eneste, der virker, er at oprette kanalen og genposte det vigtige manuelt.",
+        "<b>Tilføjer du en person til en 1:1-chat,</b> udvides chatten ikke. Teams opretter en ny gruppechat i stedet.",
+        "<b>Alle i teamet kan læse standardkanaler.</b> Personalesager og andet, du ikke vil have, at kolleger læser, hører hjemme i en chat.",
+        "<b>Kanaler er nemme at overse.</b> Flytter du arbejdet derover, så vælg <i>⋯ → Channel notifications</i> og slå notifikationer til for opslag.",
+        "<b>Gruppechats har et loft på 250 personer.</b> Er I mange, er det i praksis allerede en kanal."
+      ]
+    }
+  ],
+  "bonus": {
+    "kicker": "Bonus · Når chatten nu engang er stedet",
+    "title": "Noterne, der gemmer sig i hver gruppechat",
+    "paras": [
+      "Ifølge Lea David har alle gruppechats i Teams fået et fælles noteark siden sommeropdateringen i 2026. Det bygger på Loop og bliver liggende i chatten, mens beskederne ruller videre. Det er et let mellemled mellem den hurtige snak og spørgsmålet om tre uger: “Hvad blev vi egentlig enige om?”"
+    ],
+    "note": "Det virker bedst i faste projektchats. Kanaler har deres egen noteopsætning.",
+    "steps": [
+      "Åbn gruppechatten, og klik på <b>Notes</b> øverst.",
+      "Skriv dagsorden, beslutninger eller en tjekliste. Alle i chatten kan redigere samtidig.",
+      "Opret en opgave, og @nævn en person. Opgaven lander automatisk i vedkommendes <b>To Do</b> og <b>Planner</b>.",
+      "Siden findes også i Loop-appen, så du kan finde den igen uden at rulle tilbage i chatten."
+    ]
+  }
+}

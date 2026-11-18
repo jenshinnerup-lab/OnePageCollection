@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find det igen i Teams · M365+ onepager 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#1a4231;--forest-deep:#12291f;--green:#18805c;--lime:#c6d94e;--bg:#f3f2ed;--card:#fff;
+--border:#e4e2d9;--rule:#e8e6de;--ink:#1c2621;--ink-2:#3d4842;--sec:#66706a;--mono:'JetBrains Mono',Consolas,monospace}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,'Segoe UI',Roboto,system-ui,sans-serif}
+a{color:#11603f}a:hover{color:#0b4a30}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
+.muted{color:var(--sec)} .mono{font-family:var(--mono);font-size:.92em}
+header{background:var(--forest);color:#fff}
+nav{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+.brand{color:#fff;text-decoration:none;font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px;padding:14px 0}
+.brand:hover{color:#fff}
+.tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
+.tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
+.tabs a.on,.tabs a:hover{color:#fff}.tabs a.on{border-bottom-color:var(--lime)}
+.stamp{font-size:13px;color:#c9d8cf}
+main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+.hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
+.hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:780px}
+.panel{background:var(--forest);color:#fff;border-radius:18px;padding:26px 28px}
+.panel h2{margin:0;font-size:13px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;color:var(--lime)}
+.sig{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;margin-top:14px}
+@media(max-width:820px){.sig{grid-template-columns:1fr}}
+.sig h3{margin:0;font-size:30px;font-weight:700;letter-spacing:-.3px;line-height:1.2}
+.sig .sub{margin:8px 0 0;color:#c9d8cf;font-size:15px;line-height:1.5}
+.sig ul{margin:18px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px}
+.sig li{position:relative;padding-left:18px;font-size:15px;line-height:1.5;color:#e7efe9}
+.sig li:before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:50%;background:var(--lime)}
+.sig .mono{color:#fff}
+.ask{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:20px}
+.big{font-size:44px;font-weight:700;line-height:1;margin-top:6px}
+.big span{font-size:16px;font-weight:500;color:#c9d8cf}
+.route{display:flex;flex-direction:column;gap:8px;margin-top:16px;font-size:14px}
+.route div{display:flex;justify-content:space-between;gap:10px;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,.08)}
+.route b{white-space:nowrap;text-align:right}
+.route .yes b{color:var(--lime)}
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(300px,100%),1fr));gap:14px}
+.mini{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px 20px;display:flex;gap:14px;align-items:flex-start}
+.mini .ic{flex:none;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;background:#eef5d0}
+.mini h3{margin:0;font-size:17px;font-weight:600}
+.mini p{margin:4px 0 0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.card h2{margin:0 0 4px;font-size:18px;font-weight:600}
+.scroll{overflow-x:auto}
+.tbl{width:100%;border-collapse:collapse;font-size:14px;min-width:640px;margin-top:10px}
+.tbl th{text-align:left;font-size:12px;font-weight:600;color:var(--sec);padding:10px 10px;border-bottom:1px solid var(--border)}
+.tbl td{padding:12px 10px;border-bottom:1px solid #efede6;vertical-align:top;line-height:1.45}
+.tbl td:first-child{font-weight:600;width:22%}
+.tbl tr:last-child td{border-bottom:none}
+.tag{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.tag.ok{background:#e3f1ea;color:#18805c}.tag.warn{background:#fbf1d8;color:#9a6b05}.tag.no{background:#fbe3e8;color:#b8304d}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(340px,100%),1fr));gap:14px}
+.check{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column}
+.check li{display:grid;grid-template-columns:26px minmax(0,1fr);gap:10px;padding:11px 0;border-bottom:1px solid var(--rule);font-size:14px;line-height:1.5}
+.check li:last-child{border-bottom:none}
+.check .n,.check .x{font-family:var(--mono);font-size:12px;font-weight:600;border-radius:6px;height:22px;display:grid;place-items:center}
+.check .n{color:var(--forest);background:#eef5d0}
+.check .x{color:#9a6b05;background:#fbf1d8}
+.check b{font-weight:600}
+.tip{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px;align-items:start}
+@media(max-width:820px){.tip{grid-template-columns:1fr}}
+.tip p{margin:8px 0 0;font-size:14px;line-height:1.55;color:var(--ink-2)}
+.steps{counter-reset:s;list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.steps li{counter-increment:s;position:relative;font-size:14px;line-height:1.5;background:var(--bg);border-radius:10px;padding:10px 12px 10px 46px}
+.steps li:before{content:counter(s);position:absolute;left:12px;top:10px;width:22px;height:22px;border-radius:50%;background:var(--forest);color:#fff;font-size:12px;font-weight:700;display:grid;place-items:center}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--green)}
+.pager{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:14px}
+.pager a{text-decoration:none;font-weight:600}
+.series{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(330px,100%),1fr));gap:14px}
+.op{background:#fff;border:1px solid var(--border);border-radius:16px;padding:20px 22px;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;gap:8px;transition:border-color .15s,transform .15s}
+.op:hover{border-color:var(--green);transform:translateY(-2px);color:var(--ink)}
+.op .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.op .nr{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--forest);background:#eef5d0;border-radius:6px;padding:2px 8px}
+.op .grp{font-size:12px;color:var(--sec)}
+.op h3{margin:4px 0 0;font-size:20px;font-weight:700;letter-spacing:-.2px}
+.op p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.op .rule{border-left:3px solid var(--lime);padding-left:10px;font-weight:600;color:var(--ink)}
+footer{border-top:1px solid var(--border)}
+footer .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--sec)}
+@media(max-width:600px){.wrap{padding:0 16px}.panel{padding:20px}.card{padding:18px}.stamp{display:none}}
+@media print{
+  @page{size:A4;margin:10mm}
+  html{zoom:var(--pz,.52)}
+  body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .wrap{max-width:none;padding:0}
+  main.wrap{padding-top:16px;padding-bottom:0;gap:14px}
+  .card,.mini,.panel,.op{break-inside:avoid}
+  .tbl{min-width:0}.pager{display:none}
+  nav{min-height:44px}.brand{padding:8px 0}.tabs a{padding:12px 0 9px}
+}
+</style>
+</head>
+<body>
+<header><nav class="wrap" aria-label="Serie">
+  <a class="brand" href="index.html"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6d94e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M17.5 14v7M14 17.5h7"/></svg> M365+</a>
+  <div class="tabs"><a href="index.html">Alle</a><a href="01-teams-chat-eller-kanal.html" class="on">Teams</a><a href="04-outlook-triage.html">Outlook</a><a href="07-kalender-og-tid.html">Planlægning</a><a href="08-loop-eller-onenote.html">Loop &amp; OneNote</a><a href="09-copilot-i-teams-moder.html">Copilot</a></div>
+  <span class="stamp">Onepager 2 af 9</span>
+</nav></header>
+<main class="wrap">
+<section class="hero" aria-labelledby="hero-title">
+    <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev · Microsoft 365 i hverdagen · Teams</p>
+    <h1 id="hero-title">Find det igen i Teams</h1>
+    <p class="lead">Teams har <b>to forskellige søgninger</b>. De fleste lærer kun den ene og bruger den til begge opgaver. Så virker søgningen tilfældig, og man ender med at rulle i fire måneders chathistorik.</p>
+  </section>
+<section class="panel" aria-labelledby="rule-title">
+    <h2 id="rule-title">Tommelfingerregel</h2>
+    <div class="sig">
+      <div>
+        <h3>Kender du samtalen, så søg i den.<br>Kender du kun personen, så søg i alt.</h3>
+        <p class="sub">Den smalle søgning er hurtig, når du ved, hvor beskeden er. Den brede søgning er stærk, når du filtrerer på afsenderen.</p>
+        <ul><li><span class="mono">Ctrl+E</span> sætter markøren i søgefeltet øverst. Det søger i alle chats, kanaler, personer og filer, du har adgang til.</li><li><span class="mono">Ctrl+F</span> søger kun i den chat eller kanal, du har åben lige nu.</li><li>Den brede søgning deler resultaterne i faner som <i>Messages</i> og <i>Files</i>. Under <i>Messages</i> kan du filtrere på afsender, team eller kanal og dato.</li><li>Søg på de ord, <b>afsenderen</b> brugte, ikke på dit eget resumé. Der stod måske “tidsplan”, selv om du husker det som “datoer”.</li></ul>
+      </div>
+      <div class="ask">
+        <div style="font-size:13px;color:#c9d8cf">Hvad kan du huske om beskeden?</div>
+        <div class="big">2 <span>genveje</span></div>
+        <div style="font-size:14px;color:#e7efe9;margin-top:8px;line-height:1.5">Vælg søgning efter det, du ved, ikke efter vane.</div>
+        <div class="route"><div class="yes"><span>Hvilken chat eller kanal den er i</span><b>→ Ctrl+F</b></div><div><span>Kun hvem der sendte den</span><b>→ Ctrl+E + afsender</b></div><div><span>Afsenderfiltret giver stadig for meget</span><b>→ + dato</b></div></div>
+      </div>
+    </div>
+  </section>
+<section class="duo" aria-label="Billedet at huske"><div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a4231" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div><div><h3>Ctrl+E = hele huset</h3><p>Søger på tværs af alt, hvad din konto har adgang til. Brug den, når du ikke ved, hvor beskeden er, og filtrér straks på den person, der sendte den.</p></div></div><div class="mini"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1a4231" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></div><div><h3>Ctrl+F = ét rum</h3><p>Søger kun i den åbne samtale. Det lyder som en begrænsning, men det er pointen: Ingen hits fra tolv andre kanaler forstyrrer.</p></div></div></section>
+<section class="card" aria-labelledby="tbl-title">
+    <h2 id="tbl-title">De to søgninger side om side</h2>
+    <p class="muted" style="margin:0;font-size:13px">Spørger du det smalle værktøj om noget bredt eller omvendt, ser resultaterne tilfældige ud.</p>
+    <div class="scroll"><table class="tbl"><thead><tr><th></th><th>Ctrl+E · bred søgning</th><th>Ctrl+F · i samtalen</th></tr></thead><tbody><tr><td>Søger i</td><td>Alle chats, kanaler, personer og filer, du har adgang til</td><td>Kun den chat eller kanal, der er åben</td></tr><tr><td>Bedst når</td><td>Du ikke ved, hvor det er, men husker hvem der skrev</td><td>Du kender samtalen, men ikke linjen, fx en kanal med 200 beskeder</td></tr><tr><td>Filtre</td><td>Afsender, team/kanal og dato under fanen <i>Messages</i></td><td>Ingen. Du er allerede i den rigtige samtale</td></tr><tr><td>Typisk fejl</td><td>Ingen filtre, så du drukner i hits</td><td>Søger i den forkerte chat og tror, beskeden er væk</td></tr></tbody></table></div>
+  </section>
+<section class="grid2"><div class="card" aria-labelledby="l0">
+      <h2 id="l0">Fire regler, der dækker næsten alt</h2>
+      <p class="muted" style="margin:0;font-size:13px">Sæt dem op ved skærmen</p>
+      <ul class="check"><li><span class="n">1</span><span><b>Ved du, hvilken chat den er i?</b> Tryk <span class="mono">Ctrl+F</span>.</span></li><li><span class="n">2</span><span><b>Ved du det ikke?</b> Tryk <span class="mono">Ctrl+E</span>, og filtrér på afsenderen. Husker du, hvem der sendte den, behøver du sjældent at huske mere.</span></li><li><span class="n">3</span><span><b>Skriv afsenderens ord,</b> hvis du kan huske dem, ikke din egen beskrivelse af beskeden.</span></li><li><span class="n">4</span><span><b>Tilføj først et datofilter,</b> når afsenderfiltret stadig giver for mange hits.</span></li></ul>
+    </div><div class="card" aria-labelledby="l1">
+      <h2 id="l1">Det løser det ikke</h2>
+      <p class="muted" style="margin:0;font-size:13px">Når søgningen ikke finder noget, er det ikke altid en fejl</p>
+      <ul class="check"><li><span class="x">!</span><span><b>Søgningen finder kun det, din konto må se.</b> Blev du tilføjet til en gruppechat uden historik, findes de ældre beskeder ikke for dig.</span></li><li><span class="x">!</span><span><b>Indhold i Loop-komponenter</b> dukker upålideligt op i søgningen. Holder teamet lister i komponenter, så søg i Loop-appen i stedet.</span></li><li><span class="x">!</span><span><b>Søgningen forstår ikke synonymer.</b> Finder du intet, så prøv de ord, kollegaen typisk bruger.</span></li></ul>
+    </div></section>
+<nav class="pager" aria-label="Bladr"><a href="01-teams-chat-eller-kanal.html">← 1. Chat eller kanal?</a><a href="03-teams-notifikationer.html">3. Teams-notifikationer under kontrol →</a></nav>
+</main>
+<footer><div class="wrap">
+  <span>Baseret på Lea Davids nyhedsbrev (14.10.2026), skrevet om med egne ord · Mere hos <a href="https://m365coaching.com">m365coaching.com</a></span>
+  <span>M365+ · VibrantColor.dev</span>
+</div></footer>
+</body>
+</html>
