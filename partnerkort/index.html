@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BC Partnerkort · Serie 01 Shopfloor</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest:#1a4231; --forest-deep:#12291f; --green:#18805c; --lime:#c6d94e;
+    --bg:#f3f2ed; --card:#fff; --border:#e4e2d9; --rule:#e8e6de;
+    --ink:#1c2621; --ink-2:#3d4842; --sec:#66706a; --warn:#e5843a;
+    --mono:'JetBrains Mono',Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,'Segoe UI',Roboto,system-ui,sans-serif}
+  a{color:#11603f}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+  .muted{color:var(--sec)}
+  .pill{font-size:11px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+  header{background:var(--forest);color:#fff}
+  nav{min-height:60px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px}
+  .brand{color:#fff;text-decoration:none;font-size:19px;font-weight:700;display:flex;align-items:center;gap:10px;padding:14px 0}
+  .tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
+  .tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
+  .tabs a.on,.tabs a:hover{color:#fff} .tabs a.on{border-bottom-color:var(--lime)}
+  main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
+  .hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
+  .hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:720px}
+  .panel{background:var(--forest);color:#fff;border-radius:18px;padding:22px 26px}
+  .panel h2{margin:0;font-size:20px;font-weight:600}
+  .panel p{margin:4px 0 0;font-size:13px;color:#c9d8cf}
+  .play{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+  .play button{font:inherit;font-size:14px;font-weight:600;min-height:40px;padding:8px 14px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.08);color:#fff;cursor:pointer}
+  .play button:hover{background:rgba(255,255,255,.16)}
+  .play button.on{background:var(--lime);color:var(--forest-deep);border-color:var(--lime)}
+  .play button.reset{background:transparent;border-style:dashed;color:#dbe6df}
+  .result{margin-top:14px;font-size:14px;color:#e8f0eb;min-height:20px}
+  .result b{color:var(--lime)}
+
+  .deck{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:18px}
+  .tc{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;display:flex;flex-direction:column;
+      box-shadow:0 6px 18px rgba(26,66,49,.07);transition:transform .25s, box-shadow .25s, border-color .25s}
+  .tc.win{border:2px solid var(--lime);box-shadow:0 0 0 4px rgba(198,217,78,.35),0 12px 28px rgba(26,66,49,.18);transform:translateY(-4px)}
+  .tc.ref{background:#fbfaf6}
+  .top{background:var(--forest);color:#fff;padding:12px 16px 14px;position:relative;border-bottom:3px solid var(--lime)}
+  .tc.ref .top{background:#4c5a52;border-bottom-color:#b9c2bc}
+  .series{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:#c9d8cf;letter-spacing:.4px}
+  .tc h3{margin:10px 0 2px;font-size:21px;font-weight:700;line-height:1.15}
+  .vendor{font-size:13px;color:#dbe6df}
+  .crown{position:absolute;right:12px;bottom:-14px;background:var(--lime);color:var(--forest-deep);font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;display:none}
+  .tc.win .crown{display:block}
+  .body{padding:16px 16px 14px;display:flex;flex-direction:column;gap:12px;flex:1}
+  .tags{display:flex;flex-wrap:wrap;gap:6px}
+  .desc{margin:0;font-size:13px;line-height:1.5;color:var(--ink-2)}
+  .stats{display:flex;flex-direction:column;border-top:1px solid var(--rule)}
+  .st{display:grid;grid-template-columns:1fr 70px 30px;gap:10px;align-items:center;padding:7px 4px;border-bottom:1px solid #efede6;font-size:13px;border-radius:6px}
+  .st.hl{background:#f2f6dc}
+  .st .n{font-family:var(--mono);font-weight:700;text-align:right;font-size:15px}
+  .bar{height:8px;border-radius:4px;background:#eceae3;overflow:hidden}
+  .bar i{display:block;height:8px;border-radius:4px;background:var(--green)}
+  .tc.ref .bar i{background:#8a968f}
+  .total{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;padding:2px 4px 0}
+  .total b{font-family:var(--mono);font-size:20px}
+  .sw{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .sw div{border-radius:10px;padding:9px 10px;font-size:12px;line-height:1.4}
+  .sw .up{background:#eef4d2} .sw .dn{background:#fbebdf}
+  .sw b{display:block;font-size:10px;letter-spacing:.6px;text-transform:uppercase;margin-bottom:2px}
+  .sw .up b{color:#5c6b12} .sw .dn b{color:#a5521a}
+  .foot{font-size:11px;color:var(--sec);padding:0 16px 14px}
+  .bar{position:relative}
+  .bar u{position:absolute;top:-2px;width:2px;height:12px;background:var(--forest-deep);border-radius:1px}
+  .st .n small{display:block;font-size:10px;font-weight:600;line-height:1}
+  .st .n small.p{color:#18805c} .st .n small.m{color:#a5521a}
+  .xp{border:1px solid var(--rule);border-radius:12px;overflow:hidden}
+  .xp summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:9px 12px;font-size:13px;font-weight:600;background:#f7f6f1}
+  .xp summary::-webkit-details-marker{display:none}
+  .xp summary .agree{font-weight:500;font-size:12px;color:var(--sec)}
+  .xp .q{padding:10px 12px;border-top:1px solid #efede6;font-size:12.5px;line-height:1.45}
+  .xp .q .who{font-weight:600;font-size:12px}
+  .xp .q .meta{font-size:11px;color:var(--sec);margin:1px 0 6px}
+  .xp .q blockquote{margin:0 0 6px;padding-left:10px;border-left:3px solid var(--lime);color:var(--ink-2)}
+  .xp .q .sc{font-family:var(--mono);font-size:11px;color:var(--sec)}
+  .xp.none summary{color:var(--sec);font-weight:500;cursor:default}
+  .ex{background:#fbebdf;color:#a5521a;font-size:10px;font-weight:700;padding:1px 6px;border-radius:999px;letter-spacing:.4px}
+  .mode{display:inline-flex;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:3px;margin-top:14px}
+  .mode button{font:inherit;font-size:13px;font-weight:600;border:0;background:transparent;color:#dbe6df;padding:7px 12px;border-radius:8px;cursor:pointer;min-height:34px}
+  .mode button.on{background:#fff;color:var(--forest-deep)}
+  .formula{font-family:var(--mono);font-size:13px;background:var(--bg);border-radius:10px;padding:12px 14px;margin:12px 0;line-height:1.6}
+  table.w{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
+  table.w td{padding:7px 4px;border-bottom:1px solid var(--rule)} table.w td:last-child{text-align:right;font-family:var(--mono);font-weight:600}
+
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+  .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
+  .card h2{margin:0 0 4px;font-size:18px;font-weight:600}
+  .kv{display:grid;grid-template-columns:170px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid var(--rule);font-size:13.5px;line-height:1.45}
+  .kv b{font-weight:600}
+  .scale{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+  .scale div{display:flex;gap:12px;font-size:13.5px;line-height:1.45}
+  .scale span{flex:none;width:52px;font-family:var(--mono);font-weight:700;background:var(--bg);border-radius:6px;text-align:center;padding:2px 0;height:fit-content}
+  .note{background:#fff8ec;border:1px solid #f1dfc0;border-radius:14px;padding:14px 18px;font-size:13.5px;line-height:1.5;color:#5b4520}
+  footer{border-top:1px solid var(--border)}
+  footer .wrap{padding-top:20px;padding-bottom:20px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:13px;color:var(--sec)}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap" aria-label="Hovedmenu">
+    <a class="brand" href="#top">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6d94e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="13" height="18" rx="2"/><path d="M8 3v0M20 7v12a2 2 0 0 1-2 2"/><path d="M8 8h5M8 12h5M8 16h3"/></svg>
+      BC Partnerkort
+    </a>
+    <div class="tabs" id="tabs"></div>
+  </nav>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero">
+    <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev · Samlekort til Business Central-tillæg</p>
+    <h1 id="s-title"></h1>
+    <p class="lead" id="s-lead"></p>
+  </section>
+
+  <section class="panel" aria-labelledby="play-title">
+    <h2 id="play-title">Spil en kategori</h2>
+    <p>Vælg en kategori. Kortene sorteres, og vinderen får limegrøn kant. Standard BC er referencekort og kan ikke vinde.</p>
+    <div class="mode" id="mode" role="group" aria-label="Scoretype">
+      <button type="button" data-m="basis">Basisscore</button>
+      <button type="button" data-m="xp" class="on">Med ekspertfaktor</button>
+    </div>
+    <div class="play" id="play"></div>
+    <div class="result" id="result" aria-live="polite"></div>
+  </section>
+
+  <section class="deck" id="deck" aria-label="Kortene i serien"></section>
+
+  <div class="note"><b>Prototype.</b> Basisscorerne er en første vurdering ud fra leverandørernes offentlige materiale (AppSource, produktsider, dokumentation). Løsningerne er ikke afprøvet side om side, og pris er udeladt. Der er endnu ingen ekspertvurderinger; mekanikken er beskrevet nederst på siden. Kortene skal kalibreres, før de vises til kunder.</div>
+
+  <section id="metode" class="grid2">
+    <div class="card">
+      <h2>De seks kategorier i <span id="s-short"></span></h2>
+      <p class="muted" style="margin:0 0 10px;font-size:13px">Samme kategorier på alle kort i serien.</p>
+      <div id="cats"></div>
+    </div>
+    <div class="card">
+      <h2>Skala 1–10</h2>
+      <p class="muted" style="margin:0;font-size:13px">Fast skala, så scorerne kan forsvares.</p>
+      <div class="scale">
+        <div><span>1–2</span><div>Findes ikke eller kun via tilpasning.</div></div>
+        <div><span>3–4</span><div>Grundfunktion findes, men kræver manuelt arbejde eller omveje.</div></div>
+        <div><span>5–6</span><div>Dækker de almindelige scenarier i en typisk dansk produktionsvirksomhed.</div></div>
+        <div><span>7–8</span><div>Stærk: dækker også undtagelser, og opsætning sker uden udvikling.</div></div>
+        <div><span>9–10</span><div>Markedets bedste i serien; løsningens kerneområde.</div></div>
+      </div>
+      <p class="muted" style="margin:14px 0 0;font-size:12.5px;line-height:1.5">Totalen er summen af de seks kategorier (maks 60). I spillet tæller kun den valgte kategori.</p>
+    </div>
+  </section>
+
+  <section id="ekspert" class="grid2">
+    <div class="card">
+      <h2>Ekspertfaktoren</h2>
+      <p class="muted" style="margin:0;font-size:13px">Basisscoren er udgangspunktet. Hver ekspert flytter scoren i de kategorier, de selv har erfaring med, vægtet efter erfaring og uafhængighed.</p>
+      <div class="formula">samlet = (basis × 2 + Σ vægt × ekspertscore)<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/ (2 + Σ vægt)</div>
+      <p style="margin:0;font-size:13.5px;line-height:1.5">Basis tæller som to fuldvægtige eksperter. Én ekspert kan derfor højst flytte scoren en tredjedel af vejen. Først når flere er enige, flytter den sig for alvor. Det beskytter mod, at en enkelt begejstret eller sur stemme vælter kortet.</p>
+      <p style="margin:10px 0 0;font-size:13.5px;line-height:1.5"><b>Enighed</b> vises pr. kort: <i>høj</i> når eksperternes scorer ligger inden for 1 point, <i>middel</i> inden for 2–3, ellers <i>lav</i>. Lav enighed er et signal om at spørge ind, ikke en fejl.</p>
+    </div>
+    <div class="card">
+      <h2>Vægt pr. ekspert</h2>
+      <p class="muted" style="margin:0;font-size:13px">Vægt = relation × erfaring. Leverandøren selv tæller ikke med.</p>
+      <table class="w">
+        <tr><td>Uafhængig konsulent eller kunde</td><td>1,0</td></tr>
+        <tr><td>Partner der sælger løsningen</td><td>0,6</td></tr>
+        <tr><td>Leverandøren selv</td><td>0 (vises, tæller ikke)</td></tr>
+        <tr><td>Erfaring: 5+ implementeringer / 2+ års drift</td><td>× 1,0</td></tr>
+        <tr><td>Erfaring: 2–4 implementeringer</td><td>× 0,75</td></tr>
+        <tr><td>Erfaring: 1 implementering eller demo</td><td>× 0,5</td></tr>
+      </table>
+      <p class="muted" style="margin:12px 0 0;font-size:12.5px;line-height:1.5">Hver vurdering har navn, firma, rolle, relation, erfaring, dato og et kort citat. Citater bruges kun med eksplicit tilladelse, og vurderinger ældre end 18 måneder markeres som forældede.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>BC Partnerkort · VibrantColor.dev · Vurdering pr. november 2026</span>
+    <span><a href="#metode">Sådan scores der</a> · <a href="#ekspert">Ekspertfaktoren</a></span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

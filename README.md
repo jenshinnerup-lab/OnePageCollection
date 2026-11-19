@@ -19,6 +19,12 @@ Indholdet bygger på Lea Davids nyhedsbrev ([m365coaching.com](https://m365coach
 | 8 | [`08-loop-eller-onenote.html`](08-loop-eller-onenote.html) | Loop eller OneNote, hvem der ejer komponenten, og gendannelse |
 | 9 | [`09-copilot-i-teams-moder.html`](09-copilot-i-teams-moder.html) | Copilot-referater og transskriptkvalitet |
 
+## Andre samlinger
+
+| Mappe | Hvad |
+|---|---|
+| [`partnerkort/`](partnerkort/) | BC Partnerkort: samlekort, der sammenligner partnerløsninger til Business Central i fem serier. Se [`partnerkort/README.md`](partnerkort/README.md) |
+
 ## Struktur
 
 | Sti | Hvad |
