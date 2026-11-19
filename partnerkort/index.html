@@ -91,6 +91,25 @@
   table.w{width:100%;border-collapse:collapse;font-size:13px;margin-top:8px}
   table.w td{padding:7px 4px;border-bottom:1px solid var(--rule)} table.w td:last-child{text-align:right;font-family:var(--mono);font-weight:600}
 
+  .isv{font-family:var(--mono);font-size:11px;color:#c9d8cf;margin-top:6px;letter-spacing:.2px}
+  .isv b{color:var(--lime);font-weight:600}
+  .mk{display:flex;flex-wrap:wrap;align-items:center;gap:4px;font-size:11px}
+  .mk .muted{margin-right:2px}
+  .mk code{font-family:var(--mono);font-size:10.5px;font-weight:600;background:var(--bg);border:1px solid var(--rule);border-radius:5px;padding:1px 5px}
+  .search{background:#fff;border:1px solid var(--border);border-radius:18px;padding:18px 22px;display:flex;flex-direction:column;gap:10px}
+  .search label{font-weight:600;font-size:15px}
+  .search input{font:inherit;font-size:16px;padding:11px 14px;border:1px solid var(--border);border-radius:10px;background:var(--bg);color:var(--ink);width:100%}
+  .search input:focus{outline:2px solid var(--lime);border-color:var(--forest)}
+  .qchips{display:flex;flex-wrap:wrap;gap:6px}
+  .qchips button{font:inherit;font-size:13px;font-weight:600;min-height:34px;padding:5px 11px;border-radius:999px;border:1px solid var(--border);background:#f7f6f1;color:var(--ink-2);cursor:pointer}
+  .qchips button:hover{border-color:var(--forest)}
+  .qhelp{margin:0;font-size:12.5px;line-height:1.5}
+  .qhelp code{font-family:var(--mono);font-size:12px;background:var(--bg);padding:0 4px;border-radius:4px}
+  .hits{font-size:13px;line-height:1.9;color:var(--ink-2)}
+  .hits a{display:inline-block;margin-right:10px;text-decoration:none;border-bottom:1px solid #b9d3c4}
+  .hits .cc{font-family:var(--mono);font-size:11px;color:var(--sec)}
+  .empty{grid-column:1/-1;margin:0;padding:22px;background:#fff;border:1px dashed var(--border);border-radius:14px;color:var(--sec)}
+
   .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
   .card{background:#fff;border:1px solid var(--border);border-radius:16px;padding:22px}
   .card h2{margin:0 0 4px;font-size:18px;font-weight:600}
@@ -120,6 +139,22 @@
     <p class="muted" style="margin:0 0 6px;font-size:13px">VibrantColor.dev · Samlekort til Business Central-tillæg</p>
     <h1 id="s-title"></h1>
     <p class="lead" id="s-lead"></p>
+  </section>
+
+  <section class="search" aria-labelledby="q-label">
+    <label id="q-label" for="q">Søg på app, ISV eller landekode</label>
+    <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Fx DK · Continia · isv:NO · mk:DE">
+    <div class="qchips" id="qchips" aria-label="Hurtigsøgninger">
+      <button type="button" data-q="DK">🇩🇰 DK</button>
+      <button type="button" data-q="isv:DK">ISV fra DK</button>
+      <button type="button" data-q="mk:DK">Dækker DK</button>
+      <button type="button" data-q="mk:NO">Dækker NO</button>
+      <button type="button" data-q="mk:DE">Dækker DE</button>
+      <button type="button" data-q="isv:US">ISV fra US</button>
+      <button type="button" data-q="">Ryd</button>
+    </div>
+    <p class="muted qhelp">To bogstaver (DK) matcher både ISV-land og marked. <code>isv:DK</code> = kun ISV’ens land, <code>mk:DK</code> = kun markeder (globale apps tæller med). Fritekst søger i navn, ISV, tags og beskrivelse. Søgningen gælder på tværs af serier.</p>
+    <div class="hits" id="hits" aria-live="polite"></div>
   </section>
 
   <section class="panel" aria-labelledby="play-title">
