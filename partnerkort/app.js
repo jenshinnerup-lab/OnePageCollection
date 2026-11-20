@@ -34,7 +34,7 @@
          desc:'BC-udvidelse plus Power Apps-pakke. Bogfører afgang og forbrug automatisk og giver supervisor besked ved fejl.',
          s:{tid:4,prod:8,mes:5,ui:7,std:5,aab:7},
          up:'Fejlhåndtering med realtidsalarmer til supervisoren.', dn:'Lønsiden er ikke kernen; delt arkitektur BC/Power Apps.'},
-        {id:'te', name:'Time Entry', vendor:'Cost Control Software', isv:'Cost Control Software', cc:'', tags:['AppSource','Rollecenter'],
+        {id:'te', name:'Time Entry', vendor:'Cost Control Software', isv:'Cost Control Software', cc:'US', tags:['AppSource','Rollecenter'],
          desc:'Simpel stempling på produktions- og sagsopgaver via et mobilvenligt rollecenter med indbygget stregkodescanner.',
          s:{tid:5,prod:4,mes:2,ui:6,std:9,aab:4},
          up:'Lille og hurtig at sætte op; ind- og udstempling på hver sin terminal.', dn:'Kun tid; ingen lønregler, spild eller kvalitet.'}
@@ -144,7 +144,7 @@
          desc:'Synkroniserer labelskabeloner og printere fra BarTender Cloud til BC; feltmapping uden kode og print fra enhver liste eller kortside.',
          s:{des:10,vej:8,flow:6,gs1:9,std:7,dk:5},
          up:'Branchens stærkeste labeldesigner og printmotor.', dn:'Kræver BarTender Cloud-abonnement; salg via forhandlere.'},
-        {id:'azl', name:'AL Zebra ZPL Label Manager', vendor:'Applibra', isv:'Applibra', cc:'', tags:['AppSource','Native ZPL'],
+        {id:'azl', name:'AL Zebra ZPL Label Manager', vendor:'Applibra', isv:'AppLibra srl', cc:'IT', tags:['AppSource','Native ZPL'],
          desc:'Direkte Zebra-print med native ZPL fra dynamiske skabeloner, GS1, billeder og multi-up, uden Windows-drivere.',
          s:{des:5,vej:8,flow:6,gs1:8,std:6,dk:3},
          up:'Skarpe Zebra-labels uden drivere eller ekstern labelsoftware.', dn:'Kræver AL Bridge som lokal service; ZPL er teknisk at vedligeholde.'}

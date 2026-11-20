@@ -50,4 +50,4 @@ Citater må kun bruges med eksplicit tilladelse fra eksperten.
 - Serien er nu global. Kategorien *Bankdækning DK* er blevet til *Bankdækning* (antal banker og lande), og dansk relevans vises i stedet med markedskoder.
 - Fem nye kort fra AppSource-research: IT.integro, IDYN Direct Banking, BankLink, 365 business Banking og Yavrio. Basisscorerne bygger kun på offentligt materiale og er et startpunkt.
 - Betalingsmodtagelse (PSP, kort, direct debit, fx PSP Connect, Adyen, GoCardless og Stripe) er ikke med. Det er en kandidat til en senere serie.
-- ISV-land er ikke verificeret for: Cost Control Software og Applibra.
+- ISV-land er verificeret via ISV'ernes egne hjemmesider: Cost Control Software (Carmel, Indiana, US) og AppLibra srl (Thiene, Italien, IT).
