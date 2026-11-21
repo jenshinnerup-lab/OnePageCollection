@@ -35,8 +35,13 @@ Hvert kort viser ISV'en og ISV'ens land som en ISO-landekode på to bogstaver (f
 | 13 | Rollecenter & KPI | `index.html#rollecenter` | Beyond Cues, Eagle Free, Dynamics Cues, Faect Dynamic Role Center |
 | 14 | Felter & tilpasning uden kode | `index.html#nocode` | Simple Object Designer, SD Easy Customise, DINO 365, EOS Custom Defined Fields |
 | 15 | Excel & dataimport | `index.html#excel` | Theta Excel Importer, Jet Reports, Memento Import Templates, Hougaard BCCL |
+| 16 | Debitor & opkrævning | `index.html#debitor` | Continia Collection Management, Continia MobilePay Invoice & Subscriptions, Tecman Clever Credit, Binary Stream AR & Collections Manager |
+| 17 | Projekt, sag & tid | `index.html#projekt` | TimeLog PSA, Abakion Project Time Mobile, Inventio.IT SMARTtime, ON720 Timesheet720, Pryme Time |
+| 18 | BI & rapportering | `index.html#bi` | TARGIT, Jet Reports, Datawareness BI Endpoints, navida BC 2 Fabric; reference: Power BI-apps i BC |
+| 19 | Stamdata & kreditinfo | `index.html#stamdata` | Proff Pro, KUMAVISION Credit-Check (Creditsafe), Telos Team D&B Integration, Allianz Trade for BC |
+| 20 | Udlejning & rental | `index.html#udlejning` | Abakion Rental Management, EQM 365 Rental, ODT Rentals, Suite Engine RPM, Essential Rental |
 
-Serierne er grupperet i menuen: Drift & lager (01, 04, 06, 10), Økonomi (02, 03, 05, 07, 08), Salg & kanaler (09) og Interface & UX (11–15). En serie har feltet `group`, som styrer grupperingen.
+Serierne er grupperet i menuen: Drift & lager (01, 04, 06, 10), Økonomi (02, 03, 05, 07, 08, 16), Salg & kanaler (09), Interface & UX (11–15), Projekt & service (17, 20) og Data & indsigt (18, 19). En serie har feltet `group`, som styrer grupperingen.
 
 ## Scorer
 
