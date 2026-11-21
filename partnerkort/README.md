@@ -25,6 +25,18 @@ Hvert kort viser ISV'en og ISV'ens land som en ISO-landekode på to bogstaver (f
 | 03 | Dokument-capture & kreditorautomatisering | `index.html#dokument-capture` | Continia Document Capture, ExFlow AP, Zetadocs Capture, Corpay AP |
 | 04 | Labelprint & etiketter | `index.html#labelprint` | Tasklet Mobile WMS Print, InterFormNG, Abakion Labels Mobile, BarTender Print Connector, AL Zebra ZPL Label Manager |
 | 05 | Bank & betalinger | `index.html#bank` | Continia Banking, AMC Banking 365 Business, Aritma Finance Manager, SMARTbank, IT.integro Electronic Banking, IDYN Direct Banking, BankLink, 365 business Banking, Yavrio Open Banking |
+| 06 | Fragt & forsendelse | `index.html#fragt` | XtensionIT Shipment Connector, Abakion nShift/Webshipper Connector, Inventio.IT SMARTshipment, MDC Nordic Shipmondo Connector, iDyn ShipIT 365 |
+| 07 | Løn & lønintegration | `index.html#loen` | Zenegy Payroll, Intect, JobManager (lønforberedelse); reference: Payroll Data Definitions (DK) |
+| 08 | Udlæg & firmakort | `index.html#udlaeg` | Continia Expense Management, Pleo, Zetadocs Expenses, Payhawk, Spendesk |
+| 09 | E-handel & PIM | `index.html#ehandel` | DynamicWeb, Perfion PIM, Sana Commerce; reference: Standard BC + Shopify Connector |
+| 10 | Mobilt lager (WMS) | `index.html#lager` | Tasklet Mobile WMS, NaviPartner NP WMS, Insight Works Warehouse Insight, Yaveon 365 Warehouse App |
+| 11 | Grafisk planlægning (Gantt) | `index.html#planlaegning` | NETRONIC VPS/VAPS, NETRONIC VJS, Insight Works Graphical Scheduler, Abakion ROB-EX Scheduler Connector |
+| 12 | Rapport- & dokumentlayout | `index.html#layout` | ForNAV, Abakion Document Customizer, InterFormNG, Beyond Document Designer, WSB Document Creator |
+| 13 | Rollecenter & KPI | `index.html#rollecenter` | Beyond Cues, Eagle Free, Dynamics Cues, Faect Dynamic Role Center |
+| 14 | Felter & tilpasning uden kode | `index.html#nocode` | Simple Object Designer, SD Easy Customise, DINO 365, EOS Custom Defined Fields |
+| 15 | Excel & dataimport | `index.html#excel` | Theta Excel Importer, Jet Reports, Memento Import Templates, Hougaard BCCL |
+
+Serierne er grupperet i menuen: Drift & lager (01, 04, 06, 10), Økonomi (02, 03, 05, 07, 08), Salg & kanaler (09) og Interface & UX (11–15). En serie har feltet `group`, som styrer grupperingen.
 
 ## Scorer
 

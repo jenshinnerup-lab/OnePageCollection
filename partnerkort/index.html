@@ -25,6 +25,17 @@
   .tabs{display:flex;flex-wrap:wrap;gap:4px 24px;font-size:15px;flex:1 1 auto}
   .tabs a{color:#dbe6df;text-decoration:none;padding:18px 0 15px;border-bottom:3px solid transparent}
   .tabs a.on,.tabs a:hover{color:#fff} .tabs a.on{border-bottom-color:var(--lime)}
+  .smenu{position:relative}
+  .smenu summary{list-style:none;cursor:pointer;color:#fff;font-weight:600;padding:18px 0 15px;border-bottom:3px solid var(--lime);display:flex;gap:8px;align-items:baseline}
+  .smenu summary::-webkit-details-marker{display:none}
+  .muted-l{color:#c9d8cf;font-family:var(--mono);font-size:12px;font-weight:500}
+  .smenu-panel{position:absolute;z-index:20;top:100%;left:0;margin-top:6px;background:#fff;color:var(--ink);border:1px solid var(--border);border-radius:14px;box-shadow:0 16px 40px rgba(18,41,31,.25);padding:14px;display:grid;grid-template-columns:repeat(2,minmax(200px,1fr));gap:6px 18px;width:min(560px,calc(100vw - 48px))}
+  .sgrp-h{font-size:11px;font-weight:700;letter-spacing:.6px;text-transform:uppercase;color:var(--sec);margin:6px 0 4px}
+  .smenu-panel a{display:flex;gap:10px;align-items:baseline;color:var(--ink);text-decoration:none;padding:7px 8px;border-radius:8px;font-size:14px;border:0}
+  .smenu-panel a span{font-family:var(--mono);font-size:12px;color:var(--sec);width:20px}
+  .tabs .smenu-panel a:hover{background:var(--bg);color:var(--ink)} .tabs .smenu-panel a.on{background:#eef4d2;font-weight:600;color:var(--ink);border:0}
+  .tabs a.navlink{color:#dbe6df}
+  @media (max-width:600px){.smenu-panel{grid-template-columns:1fr;max-height:70vh;overflow:auto}}
   main.wrap{padding-top:36px;padding-bottom:64px;display:flex;flex-direction:column;gap:28px}
   .hero h1{margin:0;font-size:clamp(30px,5vw,44px);line-height:1.1;font-weight:700;letter-spacing:-.5px}
   .hero p.lead{margin:14px 0 0;font-size:18px;line-height:1.55;color:var(--ink-2);max-width:720px}
@@ -159,7 +170,7 @@
 
   <section class="panel" aria-labelledby="play-title">
     <h2 id="play-title">Spil en kategori</h2>
-    <p>Vælg en kategori. Kortene sorteres, og vinderen får limegrøn kant. Standard BC er referencekort og kan ikke vinde.</p>
+    <p>Vælg en kategori. Kortene sorteres, og vinderen får limegrøn kant. Referencekortet (standard BC) kan ikke vinde.</p>
     <div class="mode" id="mode" role="group" aria-label="Scoretype">
       <button type="button" data-m="basis">Basisscore</button>
       <button type="button" data-m="xp" class="on">Med ekspertfaktor</button>

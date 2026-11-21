@@ -23,7 +23,7 @@ Indholdet bygger på Lea Davids nyhedsbrev ([m365coaching.com](https://m365coach
 
 | Mappe | Hvad |
 |---|---|
-| [`partnerkort/`](partnerkort/) | BC Partnerkort: samlekort, der sammenligner partnerløsninger til Business Central i fem serier. Se [`partnerkort/README.md`](partnerkort/README.md) |
+| [`partnerkort/`](partnerkort/) | BC Partnerkort: samlekort, der sammenligner partnerløsninger til Business Central i 15 serier. Se [`partnerkort/README.md`](partnerkort/README.md) |
 
 ## Struktur
 
