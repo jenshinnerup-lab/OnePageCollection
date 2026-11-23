@@ -286,7 +286,7 @@
     },
     'udlaeg': {
       no:'08', group:'Økonomi', short:'Udlæg & firmakort', title:'Serie 08: Udlæg & firmakort',
-      lead:'Standard BC har ingen udlægsproces; medarbejdere oprettes typisk som kreditorer. Markedet er delt i to: løsninger bygget ind i BC og kortplatforme med en BC-connector. To af de største er danske.',
+      lead:'Standard BC har ingen udlægsproces; medarbejdere oprettes typisk som kreditorer. Markedet er delt i to: løsninger bygget ind i BC og kortplatforme med en BC-connector. Flere kortplatforme (Franklin, Revolut) bruger den samme generiske Chift-udvidelse i stedet for egen BC-app.',
       cats:[
         ['kv','Kvitteringsflow','App, foto, OCR og påmindelser til medarbejderen.'],
         ['kort','Firmakort','Egne kort eller kreditkorttransaktioner matchet med kvitteringer.'],
@@ -319,7 +319,31 @@
         {id:'spd', name:'Spendesk', vendor:'Spendesk', isv:'Spendesk', cc:'FR', tags:['Kortplatform','BC-connector'],
          desc:'Fransk spend-platform med virtuelle og fysiske kort, godkendelser og eksport til Business Central.',
          s:{kv:8,kort:9,godk:7,bog:6,std:5,dk:2},
-         up:'Virtuelle engangskort til abonnementer og indkøb.', dn:'Integrationen er mere eksport end integration.'}
+         up:'Virtuelle engangskort til abonnementer og indkøb.', dn:'Integrationen er mere eksport end integration.'},
+        {id:'frk', name:'Franklin', vendor:'Franklin Technologies ApS', isv:'Franklin', cc:'DK', tags:['🇩🇰 Dansk','Wallet + cashback'],
+         desc:'Kortplatform med forudbetalt wallet og cashback. Bogfører via Chift-udvidelsen enten som faktura og betaling på leverandøren eller som én kladdelinje på udgiftskontoen.',
+         s:{kv:6,kort:9,godk:5,bog:8,std:5,dk:10},
+         up:'To bogføringsmodeller: leverandørsporing eller enkel kladde.', dn:'Kun BC online; kræver SUPER for at installere Chift; dimensioner mangler i den enkle model.'},
+        {id:'acb', name:'Acubiz', vendor:'Acubiz', isv:'Acubiz', cc:'DK', tags:['🇩🇰 Dansk','Udlæg & rejser'],
+         desc:'Dansk løsning til udlæg, kørsel og rejseafregning med integration til Business Central, kortfeeds og transportudgifter via bl.a. Brobizz og AirPlus.',
+         s:{kv:8,kort:6,godk:8,bog:7,std:6,dk:10},
+         up:'Stærk på danske regler for kørsel og rejseafregning.', dn:'Ingen egne betalingskort.'},
+        {id:'mss', name:'Moss', vendor:'Moss', isv:'Moss', cc:'DE', tags:['Kortplatform','Kreditkort'],
+         desc:'Kort, leverandørfakturaer og refusioner eksporteres med konti, moms og dimensioner; stamdata synkroniseres begge veje, også nye leverandører.',
+         s:{kv:8,kort:9,godk:8,bog:8,std:5,dk:2},
+         up:'Leverandører kan oprettes i Moss og synkroniseres tilbage til BC.', dn:'BC-integrationen er et betalt ERP-tillæg.'},
+        {id:'rmp', name:'Ramp', vendor:'Ramp', isv:'Ramp', cc:'US', tags:['Kortplatform','3-vejs matchning'],
+         desc:'Tovejssynkronisering og 3-vejs matchning med BC: kort, leverandørbetalinger, indkøb, udlæg og rejser samlet i Ramp.',
+         s:{kv:8,kort:9,godk:8,bog:7,std:5,dk:1},
+         up:'Bredeste spend-platform, med multi-entitet via tillæg.', dn:'Primært USA; opdaterer ikke leverandørkort i BC.'},
+        {id:'sld', name:'Soldo', vendor:'Soldo', isv:'Soldo', cc:'GB', tags:['Kortplatform','Forudbetalt'],
+         desc:'Forudbetalte Mastercard-firmakort; transaktioner synkroniseres med BC i ét klik fra Soldos marketplace.',
+         s:{kv:7,kort:8,godk:6,bog:6,std:5,dk:2},
+         up:'Enkel opsætning og stram kontrol med forudbetalte kort.', dn:'Kun forudbetalt eller debet; ingen kredit.'},
+        {id:'rvb', name:'Revolut Business', vendor:'Revolut', isv:'Revolut', cc:'GB', tags:['Erhvervskonto','Chift'],
+         desc:'Erhvervskonto med kort; udgifter og refusioner sendes til BC med kvitteringen som bilag, via samme Chift-udvidelse som Franklin.',
+         s:{kv:7,kort:8,godk:6,bog:7,std:4,dk:4},
+         up:'Bank, kort og udlæg samme sted.', dn:'Eksporterede udgifter kan ikke rettes; kun første kvittering følger med.'}
       ]
     },
     'ehandel': {

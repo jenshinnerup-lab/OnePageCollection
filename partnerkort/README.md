@@ -27,7 +27,7 @@ Hvert kort viser ISV'en og ISV'ens land som en ISO-landekode på to bogstaver (f
 | 05 | Bank & betalinger | `index.html#bank` | Continia Banking, AMC Banking 365 Business, Aritma Finance Manager, SMARTbank, IT.integro Electronic Banking, IDYN Direct Banking, BankLink, 365 business Banking, Yavrio Open Banking |
 | 06 | Fragt & forsendelse | `index.html#fragt` | XtensionIT Shipment Connector, Abakion nShift/Webshipper Connector, Inventio.IT SMARTshipment, MDC Nordic Shipmondo Connector, iDyn ShipIT 365 |
 | 07 | Løn & lønintegration | `index.html#loen` | Zenegy Payroll, Intect, JobManager (lønforberedelse); reference: Payroll Data Definitions (DK) |
-| 08 | Udlæg & firmakort | `index.html#udlaeg` | Continia Expense Management, Pleo, Zetadocs Expenses, Payhawk, Spendesk |
+| 08 | Udlæg & firmakort | `index.html#udlaeg` | Continia Expense Management, Pleo, Zetadocs Expenses, Payhawk, Spendesk, Franklin, Acubiz, Moss, Ramp, Soldo, Revolut Business |
 | 09 | E-handel & PIM | `index.html#ehandel` | DynamicWeb, Perfion PIM, Sana Commerce; reference: Standard BC + Shopify Connector |
 | 10 | Mobilt lager (WMS) | `index.html#lager` | Tasklet Mobile WMS, NaviPartner NP WMS, Insight Works Warehouse Insight, Yaveon 365 Warehouse App |
 | 11 | Grafisk planlægning (Gantt) | `index.html#planlaegning` | NETRONIC VPS/VAPS, NETRONIC VJS, Insight Works Graphical Scheduler, Abakion ROB-EX Scheduler Connector |
