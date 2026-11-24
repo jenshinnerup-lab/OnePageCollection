@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Byg M365+ onepagers (Observatorium-stil) ud fra data/*.json.
+"""Byg M365+ onepagers (Limfjord-designet, se limfjord/README.md) ud fra data/*.json.
 
 Brug:  python3 scripts/build.py
 
@@ -45,6 +45,7 @@ LOGO = ('<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#c6
         '<path d="M17.5 14v7M14 17.5h7"/></svg>')
 
 CSS = """
+/* Limfjord — værdierne følger limfjord/tokens.json */
 :root{--forest:#1a4231;--forest-deep:#12291f;--green:#18805c;--lime:#c6d94e;--bg:#f3f2ed;--card:#fff;
 --border:#e4e2d9;--rule:#e8e6de;--ink:#1c2621;--ink-2:#3d4842;--sec:#66706a;--mono:'JetBrains Mono',Consolas,monospace}
 *{box-sizing:border-box}
@@ -157,6 +158,7 @@ def head(title, print_zoom=None):
 <html lang="da">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="design-system" content="Limfjord">
 <title>{esc(title)}</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">

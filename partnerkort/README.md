@@ -1,6 +1,6 @@
 # BC Partnerkort
 
-Samlekort i bilkort-stil, der sammenligner partnerløsninger til Microsoft Dynamics 365 Business Central. De er lavet i Observatorium-stil (VibrantColor.dev). Hver serie dækker ét område, som standard BC ikke dækker godt nok. Alle kort i en serie scores 1–10 i de samme seks kategorier, og standard BC er med som referencekort.
+Samlekort i bilkort-stil, der sammenligner partnerløsninger til Microsoft Dynamics 365 Business Central. De er lavet i [Limfjord](../limfjord/)-designet (VibrantColor.dev). Hver serie dækker ét område, som standard BC ikke dækker godt nok. Alle kort i en serie scores 1–10 i de samme seks kategorier, og standard BC er med som referencekort.
 
 Åbn `index.html` i en browser. Vælg en kategori, så sorteres kortene, og vinderen markeres.
 
