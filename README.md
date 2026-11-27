@@ -1,6 +1,6 @@
 # OnePageCollection: M365+
 
-En serie korte onepagers om Microsoft 365 i hverdagen (Teams, Outlook, To Do, Planner, Loop, OneNote og Copilot) i Observatorium-stil. Siderne er beregnet til at blive delt med kolleger og kan udskrives på én A4-side.
+En serie korte onepagers om Microsoft 365 i hverdagen (Teams, Outlook, To Do, Planner, Loop, OneNote og Copilot) i [Limfjord](limfjord/)-designet. Siderne er beregnet til at blive delt med kolleger og kan udskrives på én A4-side.
 
 Indholdet bygger på Lea Davids nyhedsbrev ([m365coaching.com](https://m365coaching.com)) og er skrevet om på dansk med egne ord. Hver side angiver, hvilke udgaver af nyhedsbrevet den bygger på. Menunavne er gengivet på engelsk, så de matcher den engelske brugerflade.
 
@@ -23,6 +23,7 @@ Indholdet bygger på Lea Davids nyhedsbrev ([m365coaching.com](https://m365coach
 
 | Mappe | Hvad |
 |---|---|
+| [`limfjord/`](limfjord/) | Limfjord: designsproget (farver, typografi, komponenter) som alle sider i repoet bruger. Se [`limfjord/README.md`](limfjord/README.md) |
 | [`partnerkort/`](partnerkort/) | BC Partnerkort: samlekort, der sammenligner partnerløsninger til Business Central i 20 serier. Se [`partnerkort/README.md`](partnerkort/README.md) |
 
 ## Struktur

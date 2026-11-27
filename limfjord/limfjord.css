@@ -1,0 +1,145 @@
+/* Limfjord — designsproget bag VibrantColor.dev.
+   Genereret fra limfjord/tokens.json + komponentklasser (lf-). Se limfjord/README.md. */
+:root{
+  --forest:#1a4231;
+  --forest-deep:#12291f;
+  --green:#18805c;
+  --lime:#c6d94e;
+  --paper:#f3f2ed;
+  --surface:#ffffff;
+  --line:#e4e2d9;
+  --rule:#e8e6de;
+  --rule-soft:#efede6;
+  --ink:#1c2621;
+  --ink-2:#3d4842;
+  --ink-muted:#66706a;
+  --link:#11603f;
+  --on-forest:#ffffff;
+  --on-forest-soft:#dbe6df;
+  --on-forest-muted:#c9d8cf;
+  --lime-soft:#eef4d2;
+  --lime-highlight:#f2f6dc;
+  --up-ink:#5c6b12;
+  --track:#eceae3;
+  --warn:#e5843a;
+  --warn-soft:#fbebdf;
+  --warn-ink:#a5521a;
+  --note-bg:#fff8ec;
+  --note-line:#f1dfc0;
+  --note-ink:#5b4520;
+  --amber-soft:#fbf1d8;
+  --amber-ink:#9a6b05;
+  --mint:#e7efe9;
+  --ref:#4c5a52;
+  --ref-line:#b9c2bc;
+  --ref-bar:#8a968f;
+  --ref-surface:#fbfaf6;
+  --space-1:4px;
+  --space-2:8px;
+  --space-3:12px;
+  --space-4:16px;
+  --space-5:22px;
+  --space-6:28px;
+  --space-7:36px;
+  --page-gutter:24px;
+  --page-max:1240px;
+  --radius-xs:6px;
+  --radius-sm:10px;
+  --radius-md:14px;
+  --radius-lg:16px;
+  --radius-xl:18px;
+  --radius-pill:999px;
+  --shadow-card:0 6px 18px rgba(26,66,49,0.07);
+  --shadow-win:0 0 0 4px rgba(198,217,78,0.35), 0 12px 28px rgba(26,66,49,0.18);
+  --shadow-menu:0 16px 40px rgba(18,41,31,0.25);
+  --font-sans:Inter, "Segoe UI", Roboto, system-ui, sans-serif;
+  --font-mono:"JetBrains Mono", Consolas, monospace;
+}
+
+body { margin: 0; font-family: var(--font-sans); background: var(--paper); color: var(--ink); }
+.lf-wrap { max-width: var(--page-max); margin: 0 auto; padding: 0 var(--page-gutter); }
+.lf-muted { color: var(--ink-muted); }
+
+/* Header */
+.lf-header { background: var(--forest); color: var(--on-forest); }
+.lf-nav { min-height: 60px; display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-6); }
+.lf-brand { color: var(--on-forest); text-decoration: none; font-size: 19px; font-weight: 700; display: flex; align-items: center; gap: 10px; padding: 14px 0; }
+.lf-tabs { display: flex; flex-wrap: wrap; gap: var(--space-1) var(--space-5); font-size: 15px; }
+.lf-tabs a { color: var(--on-forest-soft); text-decoration: none; padding: 18px 0 15px; border-bottom: 3px solid transparent; }
+.lf-tabs a:hover, .lf-tabs a.on { color: var(--on-forest); }
+.lf-tabs a.on { border-bottom-color: var(--lime); }
+
+/* Hero */
+.lf-eyebrow { margin: 0 0 6px; font-size: 13px; color: var(--ink-muted); }
+.lf-h1 { margin: 0; font-size: clamp(30px, 5vw, 44px); line-height: 1.1; font-weight: 700; letter-spacing: -.5px; }
+.lf-lead { margin: 14px 0 0; font-size: 18px; line-height: 1.55; color: var(--ink-2); max-width: 720px; }
+
+/* Pill */
+.lf-pill { display: inline-block; font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: var(--radius-pill); white-space: nowrap; background: var(--surface); border: 1px solid var(--line); color: var(--ink-2); }
+.lf-pill-lime { background: var(--lime-soft); border-color: var(--lime-soft); color: var(--up-ink); }
+.lf-pill-warn { background: var(--warn-soft); border-color: var(--warn-soft); color: var(--warn-ink); }
+.lf-pill-forest { background: var(--forest); border-color: var(--forest); color: var(--on-forest); }
+
+/* Panel (forest) og knapper */
+.lf-panel { background: var(--forest); color: var(--on-forest); border-radius: var(--radius-xl); padding: var(--space-5) 26px; }
+.lf-panel h2 { margin: 0; font-size: 22px; font-weight: 600; }
+.lf-panel p { margin: 4px 0 0; font-size: 13px; color: var(--on-forest-muted); }
+.lf-play { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.lf-btn { font: inherit; font-size: 14px; font-weight: 600; min-height: 40px; padding: 8px 14px; border-radius: var(--radius-sm); border: 1px solid rgba(255,255,255,.25); background: rgba(255,255,255,.08); color: var(--on-forest); cursor: pointer; }
+.lf-btn:hover { background: rgba(255,255,255,.16); }
+.lf-btn.on { background: var(--lime); color: var(--forest-deep); border-color: var(--lime); }
+.lf-btn:focus-visible { outline: 2px solid var(--lime); outline-offset: 2px; }
+
+/* Fakta-felter i panel */
+.lf-facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: var(--space-3); margin-top: var(--space-4); }
+.lf-fact { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.16); border-radius: var(--radius-md); padding: 14px var(--space-4); }
+.lf-fact b { display: block; font-size: 15px; margin-bottom: 4px; }
+.lf-fact span { font-size: 14px; line-height: 1.5; color: var(--on-forest-soft); }
+.lf-fact.key { background: var(--lime); border-color: var(--lime); color: var(--forest-deep); }
+.lf-fact.key span { color: var(--forest-deep); }
+
+/* Kort (hvidt indhold) */
+.lf-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: var(--space-5); }
+.lf-card h2 { margin: 0 0 4px; font-size: 18px; font-weight: 600; }
+.lf-kv { display: grid; grid-template-columns: 170px 1fr; gap: var(--space-3); padding: 9px 0; border-bottom: 1px solid var(--rule); font-size: 13.5px; line-height: 1.45; }
+
+/* Partnerkort */
+.lf-tc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; display: flex; flex-direction: column; box-shadow: var(--shadow-card); }
+.lf-tc.win { border: 2px solid var(--lime); box-shadow: var(--shadow-win); }
+.lf-tc.ref { background: var(--ref-surface); }
+.lf-tc-top { background: var(--forest); color: var(--on-forest); padding: 12px var(--space-4) 14px; position: relative; border-bottom: 3px solid var(--lime); }
+.lf-tc.ref .lf-tc-top { background: var(--ref); border-bottom-color: var(--ref-line); }
+.lf-tc-series { display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 11px; color: var(--on-forest-muted); letter-spacing: .4px; }
+.lf-tc h3 { margin: 10px 0 2px; font-size: 21px; font-weight: 700; line-height: 1.15; }
+.lf-tc-vendor { font-size: 13px; color: var(--on-forest-soft); }
+.lf-crown { position: absolute; right: 12px; bottom: -14px; background: var(--lime); color: var(--forest-deep); font-weight: 700; font-size: 12px; padding: 4px 10px; border-radius: var(--radius-pill); }
+.lf-tc-body { padding: var(--space-4) var(--space-4) 14px; display: flex; flex-direction: column; gap: var(--space-3); flex: 1; }
+.lf-tc-desc { margin: 0; font-size: 13px; line-height: 1.5; color: var(--ink-2); }
+
+/* Statrække */
+.lf-stats { display: flex; flex-direction: column; border-top: 1px solid var(--rule); }
+.lf-st { display: grid; grid-template-columns: 1fr 70px 30px; gap: 10px; align-items: center; padding: 7px 4px; border-bottom: 1px solid var(--rule-soft); font-size: 13px; border-radius: var(--radius-xs); }
+.lf-st.hl { background: var(--lime-highlight); }
+.lf-st .n { font-family: var(--font-mono); font-weight: 700; text-align: right; font-size: 15px; }
+.lf-bar { height: 8px; border-radius: 4px; background: var(--track); overflow: hidden; }
+.lf-bar i { display: block; height: 8px; border-radius: 4px; background: var(--green); }
+.lf-tc.ref .lf-bar i { background: var(--ref-bar); }
+.lf-total { display: flex; justify-content: space-between; align-items: baseline; font-size: 13px; padding: 2px 4px 0; }
+.lf-total b { font-family: var(--font-mono); font-size: 20px; }
+
+/* Styrke / svaghed */
+.lf-sw { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-2); }
+.lf-sw div { border-radius: var(--radius-sm); padding: 9px 10px; font-size: 12px; line-height: 1.4; }
+.lf-sw .up { background: var(--lime-soft); }
+.lf-sw .dn { background: var(--warn-soft); }
+.lf-sw b { display: block; font-size: 10px; letter-spacing: .6px; text-transform: uppercase; margin-bottom: 2px; }
+.lf-sw .up b { color: var(--up-ink); }
+.lf-sw .dn b { color: var(--warn-ink); }
+
+/* Note */
+.lf-note { background: var(--note-bg); border: 1px solid var(--note-line); border-radius: var(--radius-md); padding: 14px 18px; font-size: 13.5px; line-height: 1.5; color: var(--note-ink); }
+
+/* Footer */
+.lf-footer { border-top: 1px solid var(--line); }
+.lf-footer .lf-wrap { padding-top: 20px; padding-bottom: 20px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--space-2); font-size: 13px; color: var(--ink-muted); }
+
